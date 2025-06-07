@@ -52,11 +52,7 @@ export default function Footer() {
               spaceX={0}
               gap={{ base: "3", md: "5" }}
             >
-              <Text
-                fontSize="16px"
-                fontWeight="medium"
-                color="rgba(8, 9, 48, 1)"
-              >
+              <Text fontSize="16px" fontWeight="medium" color="#080930">
                 SITEMAP
               </Text>
               <VStack
@@ -64,19 +60,29 @@ export default function Footer() {
                 spaceX={0}
                 gap={{ base: "2", md: "3" }}
               >
-                <Link href="/" fontSize="14px" margin="0">
+                <Link href="/" fontSize="14px" margin="0" color="#0A142F">
                   Home
                 </Link>
-                <Link href="/about" fontSize="14px" margin="0">
+                <Link href="/about" fontSize="14px" margin="0" color="#0A142F">
                   About
                 </Link>
-                <Link href="/features" fontSize="14px" margin="0">
+                <Link
+                  href="/features"
+                  fontSize="14px"
+                  margin="0"
+                  color="#0A142F"
+                >
                   Features
                 </Link>
-                <Link href="/blog" fontSize="14px" margin="0">
+                <Link href="/blog" fontSize="14px" margin="0" color="#0A142F">
                   Blog
                 </Link>
-                <Link href="/contact" fontSize="14px" margin="0">
+                <Link
+                  href="/contact"
+                  fontSize="14px"
+                  margin="0"
+                  color="#0A142F"
+                >
                   Contact
                 </Link>
               </VStack>
@@ -90,11 +96,7 @@ export default function Footer() {
               spaceX={0}
               gap={{ base: "3", md: "5" }}
             >
-              <Text
-                fontSize="16px"
-                fontWeight="medium"
-                color="rgba(8, 9, 48, 1)"
-              >
+              <Text fontSize="16px" fontWeight="medium" color="#080930">
                 SOCIALS
               </Text>
               <VStack
@@ -102,16 +104,36 @@ export default function Footer() {
                 spaceX={0}
                 gap={{ base: "2", md: "3" }}
               >
-                <Link href="https://facebook.com" fontSize="14px" margin="0">
+                <Link
+                  href="https://facebook.com"
+                  fontSize="14px"
+                  margin="0"
+                  color="#0A142F"
+                >
                   Facebook
                 </Link>
-                <Link href="https://linkedin.com" fontSize="14px" margin="0">
+                <Link
+                  href="https://linkedin.com"
+                  fontSize="14px"
+                  margin="0"
+                  color="#0A142F"
+                >
                   LinkedIn
                 </Link>
-                <Link href="https://instagram.com" fontSize="14px" margin="0">
+                <Link
+                  href="https://instagram.com"
+                  fontSize="14px"
+                  margin="0"
+                  color="#0A142F"
+                >
                   Instagram
                 </Link>
-                <Link href="https://twitter.com" fontSize="14px" margin="0">
+                <Link
+                  href="https://twitter.com"
+                  fontSize="14px"
+                  margin="0"
+                  color="#0A142F"
+                >
                   Twitter
                 </Link>
               </VStack>
@@ -125,11 +147,7 @@ export default function Footer() {
               spaceX={0}
               gap={{ base: "3", md: "5" }}
             >
-              <Text
-                fontSize="16px"
-                fontWeight="medium"
-                color="rgba(8, 9, 48, 1)"
-              >
+              <Text fontSize="16px" fontWeight="medium" color="#080930">
                 SUPPORT
               </Text>
               <VStack
@@ -137,16 +155,26 @@ export default function Footer() {
                 spaceX={0}
                 gap={{ base: "2", md: "3" }}
               >
-                <Link href="/contact" fontSize="14px" margin="0">
+                <Link
+                  href="/contact"
+                  fontSize="14px"
+                  margin="0"
+                  color="#0A142F"
+                >
                   Contact Us
                 </Link>
-                <Link href="/whatsapp" fontSize="14px" margin="0">
+                <Link
+                  href="/whatsapp"
+                  fontSize="14px"
+                  margin="0"
+                  color="#0A142F"
+                >
                   WhatsApp Chat
                 </Link>
-                <Link href="/status" fontSize="14px" margin="0">
+                <Link href="/status" fontSize="14px" margin="0" color="#0A142F">
                   Status Page
                 </Link>
-                <Link href="/faqs" fontSize="14px" margin="0">
+                <Link href="/faqs" fontSize="14px" margin="0" color="#0A142F">
                   FAQs
                 </Link>
               </VStack>
@@ -160,11 +188,7 @@ export default function Footer() {
               spaceX={0}
               gap={{ base: "3", md: "5" }}
             >
-              <Text
-                fontSize="16px"
-                fontWeight="medium"
-                color="rgba(8, 9, 48, 1)"
-              >
+              <Text fontSize="16px" fontWeight="medium" color="#080930">
                 LEGAL
               </Text>
               <VStack
@@ -172,16 +196,31 @@ export default function Footer() {
                 spaceX={0}
                 gap={{ base: "2", md: "3" }}
               >
-                <Link href="/privacy" fontSize="14px" margin="0">
+                <Link
+                  href="/privacy"
+                  fontSize="14px"
+                  margin="0"
+                  color="#0A142F"
+                >
                   Privacy Policy
                 </Link>
-                <Link href="/terms" fontSize="14px" margin="0">
+                <Link href="/terms" fontSize="14px" margin="0" color="#0A142F">
                   Terms of Service
                 </Link>
-                <Link href="/cookies" fontSize="14px" margin="0">
+                <Link
+                  href="/cookies"
+                  fontSize="14px"
+                  margin="0"
+                  color="#0A142F"
+                >
                   Cookie Policy
                 </Link>
-                <Link href="/compliance" fontSize="14px" margin="0">
+                <Link
+                  href="/compliance"
+                  fontSize="14px"
+                  margin="0"
+                  color="#0A142F"
+                >
                   Compliance
                 </Link>
               </VStack>
@@ -202,7 +241,7 @@ export default function Footer() {
             width={{ base: "full", md: "328px" }}
             mb={{ base: 6, md: 0 }}
           >
-            <Text fontSize="16px" fontWeight="medium">
+            <Text fontSize="16px" fontWeight="medium" color="#080930">
               NEWSLETTER
             </Text>
             <HStack
@@ -240,6 +279,7 @@ export default function Footer() {
               pb={1}
               fontSize={{ base: "14px", md: "18px" }}
               fontWeight="300"
+              color="#0A142F"
             >
               hello@doexcess.com
             </Link>
@@ -249,6 +289,7 @@ export default function Footer() {
               pb={1}
               fontSize={{ base: "14px", md: "18px" }}
               fontWeight="300"
+              color="#0A142F"
             >
               (123) 456-7890
             </Text>
