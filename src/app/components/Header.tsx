@@ -8,6 +8,7 @@ import { RxCross1, RxHamburgerMenu } from "react-icons/rx";
 export default function Header() {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
+  console.log(isOpen);
 
   const handleToggle = () => {
     setIsOpen(!isOpen);
@@ -103,7 +104,7 @@ export default function Header() {
         {/* Mobile Menu - Collapsible */}
         {isOpen && (
           <Box display={{ md: "none" }} pt={4} width="full">
-            <Stack spaceX={4}>
+            <Stack spaceX={0}>
               <Link
                 href="#home"
                 className={`link ${pathname === "/#home" ? "active" : ""}`}
