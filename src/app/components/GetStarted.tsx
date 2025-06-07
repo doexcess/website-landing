@@ -63,7 +63,6 @@ export default function GetStarted() {
             size="lg"
             variant="outline"
             width="full"
-            spaceX={{ base: 4, md: 6 }}
             flexDirection={buttonDirection}
           >
             <Button
