@@ -26,6 +26,12 @@ export default function Header() {
       justify="center"
       mt={{ base: 4, md: "10px" }}
       px={{ base: 4, md: 0 }}
+      position="fixed"
+      top={0}
+      left={0}
+      right={0}
+      zIndex="sticky"
+      background="transparent"
     >
       <Flex
         direction={{ base: "column", md: "row" }}

@@ -35,8 +35,8 @@ export default function Home() {
       justify="center"
       overflow="hidden"
       px={{ base: 4, md: 6, lg: 8 }}
-      py={{ base: 8, md: 12, lg: 16 }}
-      // pt={500}
+      pb={{ base: 8, md: 12, lg: 16 }}
+      pt={{ base: 130, md: 100, lg: 200 }}
       position="relative"
       _before={{
         content: '""',
