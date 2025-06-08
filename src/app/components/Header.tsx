@@ -1,22 +1,48 @@
 import { Button, Flex, Stack, IconButton, Box } from "@chakra-ui/react";
 import Image from "next/image";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { RxCross1, RxHamburgerMenu } from "react-icons/rx";
 
-export default function Header() {
+interface HeaderProps {
+  handleNav: (item: string) => void;
+}
+
+export default function Header({ handleNav }: HeaderProps) {
   const pathname = usePathname();
+  const router = useRouter();
   const [isOpen, setIsOpen] = useState(false);
-  console.log(isOpen);
+  const [currentHash, setCurrentHash] = useState("");
 
   const handleToggle = () => {
     setIsOpen(!isOpen);
   };
 
+  // Track hash changes
   useEffect(() => {
-    console.log(window.location.hash);
-  }, [pathname]);
+    const handleHashChange = () => {
+      setCurrentHash(window.location.hash);
+    };
+
+    // Set initial hash
+    setCurrentHash(window.location.hash);
+
+    // Listen for hash changes
+    window.addEventListener("hashchange", handleHashChange);
+    return () => window.removeEventListener("hashchange", handleHashChange);
+  }, []);
+
+  // Improved active check
+  const isActive = (hash: string) => {
+    return currentHash === hash;
+  };
+
+  const handleLinkClick = (item: string) => {
+    setCurrentHash(item); // Update state immediately
+    handleNav(item);
+    router.push(`${pathname}${item}`, { scroll: false });
+  };
 
   return (
     <Stack
@@ -75,77 +101,101 @@ export default function Header() {
           fontWeight="400"
           align="center"
         >
-          <Link
-            href="#home"
-            className={`link ${pathname === "/#home" ? "active" : ""}`}
-          >
-            Home
-          </Link>
-          <Link
-            href="#about"
-            className={`link ${pathname === "/#about" ? "active" : ""}`}
-          >
-            About
-          </Link>
-          <Link
-            href="#features"
-            className={`link ${pathname === "/#features" ? "active" : ""}`}
-          >
-            Features
-          </Link>
-          <Link
-            href="#pricing"
-            className={`link ${pathname === "/#pricing" ? "active" : ""}`}
-          >
-            Pricing
-          </Link>
-          <Link
-            href="#blogs"
-            className={`link ${pathname === "/#blogs" ? "active" : ""}`}
-          >
-            Blogs
-          </Link>
+          {["#home", "#about", "#features", "#getStarted", "#blogs"].map(
+            (item) => (
+              <Box
+                key={item}
+                position="relative"
+                _hover={{
+                  "&::after": {
+                    width: "100%",
+                  },
+                }}
+                base={{
+                  "&::after": {
+                    content: '""',
+                    position: "absolute",
+                    bottom: "-5px",
+                    left: 0,
+                    width: isActive(item) ? "100%" : "0%",
+                    height: "2px",
+                    backgroundColor: "rgba(64, 69, 225, 1)",
+                    transition: "width 0.3s ease",
+                  },
+                }}
+                css={{
+                  borderBottom: isActive(item) ? "1px solid #4045E1" : "",
+                }}
+              >
+                <Link
+                  href={item}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleLinkClick(item);
+                  }}
+                  style={{
+                    padding: "8px 0",
+                    color: isActive(item) ? "rgba(64, 69, 225, 1)" : "inherit",
+                    fontWeight: isActive(item) ? "500" : "400",
+                  }}
+                >
+                  {item.replace("#", "").charAt(0).toUpperCase() +
+                    item.replace("#", "").slice(1)}
+                </Link>
+              </Box>
+            )
+          )}
         </Flex>
 
         {/* Mobile Menu - Collapsible */}
         {isOpen && (
           <Box display={{ md: "none" }} pt={4} width="full">
-            <Stack spaceX={0}>
-              <Link
-                href="#home"
-                className={`link ${pathname === "/#home" ? "active" : ""}`}
-                onClick={() => setIsOpen(false)}
-              >
-                Home
-              </Link>
-              <Link
-                href="#about"
-                className={`link ${pathname === "/#about" ? "active" : ""}`}
-                onClick={() => setIsOpen(false)}
-              >
-                About
-              </Link>
-              <Link
-                href="#features"
-                className={`link ${pathname === "/#features" ? "active" : ""}`}
-                onClick={() => setIsOpen(false)}
-              >
-                Features
-              </Link>
-              <Link
-                href="#pricing"
-                className={`link ${pathname === "/#pricing" ? "active" : ""}`}
-                onClick={() => setIsOpen(false)}
-              >
-                Pricing
-              </Link>
-              <Link
-                href="#blogs"
-                className={`link ${pathname === "/#blogs" ? "active" : ""}`}
-                onClick={() => setIsOpen(false)}
-              >
-                Blogs
-              </Link>
+            <Stack>
+              {["#home", "#about", "#features", "#getStarted", "#blogs"].map(
+                (item) => (
+                  <Box
+                    key={item}
+                    position="relative"
+                    _hover={{
+                      "&::after": {
+                        width: "100%",
+                      },
+                    }}
+                    base={{
+                      "&::after": {
+                        content: '""',
+                        position: "absolute",
+                        bottom: "0",
+                        left: 0,
+                        width: isActive(item) ? "100%" : "0%",
+                        height: "2px",
+                        backgroundColor: "rgba(64, 69, 225, 1)",
+                        transition: "width 0.3s ease",
+                      },
+                    }}
+                  >
+                    <Link
+                      href={item}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        handleLinkClick(item);
+                        setIsOpen(false);
+                      }}
+                      style={{
+                        display: "block",
+                        padding: "8px 0",
+                        color: isActive(item)
+                          ? "rgba(64, 69, 225, 1)"
+                          : "inherit",
+                        fontWeight: isActive(item) ? "500" : "400",
+                      }}
+                    >
+                      {item.replace("#", "").charAt(0).toUpperCase() +
+                        item.replace("#", "").slice(1)}
+                    </Link>
+                  </Box>
+                )
+              )}
             </Stack>
           </Box>
         )}
