@@ -39,8 +39,9 @@ export default function Footer() {
               <Image
                 src="/images/header-logo.png"
                 alt="doexcess"
-                width="200"
-                height="45"
+                width={150}
+                height={35}
+                style={{ width: "150px", height: "35px" }}
               />
             </VStack>
           </GridItem>

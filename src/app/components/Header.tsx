@@ -79,9 +79,9 @@ export default function Header({ handleNav }: HeaderProps) {
           <Image
             src="/images/header-logo.png"
             alt="doexcess"
-            width={200}
-            height={45}
-            style={{ width: "auto", height: "auto" }}
+            width={150}
+            height={35}
+            style={{ width: "150px", height: "35px" }}
           />
           <IconButton
             display={{ base: "flex", md: "none" }}
@@ -89,7 +89,11 @@ export default function Header({ handleNav }: HeaderProps) {
             aria-label="Toggle menu"
             variant="ghost"
           >
-            {isOpen ? <RxCross1 /> : <RxHamburgerMenu />}
+            {isOpen ? (
+              <RxCross1 color="#080930" />
+            ) : (
+              <RxHamburgerMenu color="#080930" />
+            )}
           </IconButton>
         </Flex>
 
@@ -135,7 +139,7 @@ export default function Header({ handleNav }: HeaderProps) {
                   }}
                   style={{
                     padding: "8px 0",
-                    color: isActive(item) ? "rgba(64, 69, 225, 1)" : "inherit",
+                    color: isActive(item) ? "rgba(64, 69, 225, 1)" : "#080930",
                     fontWeight: isActive(item) ? "500" : "400",
                   }}
                 >
@@ -186,7 +190,7 @@ export default function Header({ handleNav }: HeaderProps) {
                         padding: "8px 0",
                         color: isActive(item)
                           ? "rgba(64, 69, 225, 1)"
-                          : "inherit",
+                          : "#080930",
                         fontWeight: isActive(item) ? "500" : "400",
                       }}
                     >
