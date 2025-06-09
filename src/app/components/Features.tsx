@@ -67,10 +67,10 @@ export default function Features() {
           >
             Features That Make Your Business Easier
           </Heading>
-          <Stack gap={5}>
+          <Stack gap={{ base: 5, sm: 10 }}>
             <SimpleGrid
               templateColumns={{ base: "1fr", md: "repeat(2,1fr)" }}
-              gap={10}
+              gap={{ base: 5, sm: 10 }}
             >
               <Image
                 src="/images/features/stress-free.png"
@@ -87,26 +87,26 @@ export default function Features() {
             </SimpleGrid>
             <SimpleGrid
               templateColumns={{ base: "1fr", md: "repeat(3,1fr)" }}
-              gap={10}
+              gap={{ base: 5, sm: 10 }}
               justifyItems="center"
               alignItems="center"
             >
               <Image
                 src="/images/features/sell-courses.png"
                 alt="Sell Courses & Events"
-                width="384"
+                width="588"
                 height="432"
               />
               <Image
                 src="/images/features/actionable.png"
                 alt="Actionable Analytics"
-                width="384"
+                width="588"
                 height="432"
               />
               <Image
                 src="/images/features/admin-control.png"
                 alt="Admin Control"
-                width="384"
+                width="588"
                 height="432"
               />
             </SimpleGrid>
