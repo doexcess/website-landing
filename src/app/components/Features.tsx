@@ -88,6 +88,8 @@ export default function Features() {
             <SimpleGrid
               templateColumns={{ base: "1fr", md: "repeat(3,1fr)" }}
               gap={10}
+              justifyItems="center"
+              alignItems="center"
             >
               <Image
                 src="/images/features/sell-courses.png"
