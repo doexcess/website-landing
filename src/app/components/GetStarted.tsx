@@ -6,6 +6,8 @@ import {
   Text,
   ButtonGroup,
   useBreakpointValue,
+  Icon,
+  HStack,
 } from "@chakra-ui/react";
 import { FiPlayCircle } from "react-icons/fi";
 
@@ -13,7 +15,6 @@ export default function GetStarted() {
   // Responsive values
   const buttonDirection = useBreakpointValue({
     base: "column",
-    sm: "row",
     md: "row",
   });
   const buttonWidth = useBreakpointValue({ base: "full", md: "227px" });
@@ -66,8 +67,8 @@ export default function GetStarted() {
           <ButtonGroup
             size="lg"
             variant="outline"
-            width="full"
             flexDirection={buttonDirection}
+            width="full"
           >
             <Button
               color="#4045E1"
@@ -86,10 +87,11 @@ export default function GetStarted() {
               borderRadius="12px"
               borderColor="#EDEEFC"
               _hover={{ bg: "rgba(237, 238, 252, 0.1)" }}
-              whiteSpace="nowrap"
-              overflowX="clip"
             >
-              <FiPlayCircle width="24px" height="24px" /> Watch Demo
+              <HStack>
+                <Icon as={FiPlayCircle} boxSize="24px" />
+                <Text>Watch Demo</Text>
+              </HStack>
             </Button>
           </ButtonGroup>
         </VStack>
