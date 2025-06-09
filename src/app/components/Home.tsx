@@ -17,7 +17,7 @@ import { BsArrowRight } from "react-icons/bs";
 import { FiPlayCircle } from "react-icons/fi";
 
 export default function Home() {
-  const buttonDirection = useBreakpointValue({ base: "column", md: "row" });
+  const buttonDirection = useBreakpointValue({ base: "column", lg: "row" });
   const buttonWidth = useBreakpointValue({ base: "full", md: "227px" });
   const headingSize = useBreakpointValue({
     base: "2xl",
@@ -55,10 +55,10 @@ export default function Home() {
       }}
     >
       <Container maxW="container.xl">
-        <SimpleGrid columns={{ base: 1, md: 2 }} alignItems="center">
+        <SimpleGrid columns={{ base: 1, md: 2 }} alignItems="center" gap={10}>
           <VStack align={{ base: "center", md: "start" }}>
             <HStack
-              maxWidth={{ base: "full", md: "603px" }}
+              maxWidth={{ base: "full", lg: "550px", xl: "603px" }}
               height={{ base: "auto", md: "33px" }}
               py={{ base: 1, md: 1 }}
               px={{ base: 2, md: 3 }}
@@ -132,6 +132,7 @@ export default function Home() {
               maxWidth={{ base: "full", md: "auto" }}
               //   spaceX={{ base: 4, md: 6 }}
               flexDirection={buttonDirection}
+              alignItems={{ base: "left", md: "left", lg: "center" }}
               m={0}
             >
               <Button

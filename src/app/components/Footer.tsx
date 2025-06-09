@@ -46,6 +46,57 @@ export default function Footer() {
             </VStack>
           </GridItem>
 
+          {/* LEGAL Column */}
+          <GridItem>
+            <VStack
+              align={{ base: "start", md: "start" }}
+              spaceX={0}
+              gap={{ base: "3", md: "5" }}
+            >
+              <Text
+                fontSize="16px"
+                fontWeight="medium"
+                color="#080930"
+                textAlign="left"
+              >
+                LEGAL
+              </Text>
+              <VStack
+                align={{ base: "start", md: "start" }}
+                spaceX={0}
+                gap={{ base: "2", md: "3" }}
+              >
+                <Link
+                  href="/privacy"
+                  fontSize="14px"
+                  margin="0"
+                  color="#0A142F"
+                >
+                  Privacy Policy
+                </Link>
+                <Link href="/terms" fontSize="14px" margin="0" color="#0A142F">
+                  Terms of Service
+                </Link>
+                <Link
+                  href="/cookies"
+                  fontSize="14px"
+                  margin="0"
+                  color="#0A142F"
+                >
+                  Cookie Policy
+                </Link>
+                <Link
+                  href="/compliance"
+                  fontSize="14px"
+                  margin="0"
+                  color="#0A142F"
+                >
+                  Compliance
+                </Link>
+              </VStack>
+            </VStack>
+          </GridItem>
+
           {/* SITEMAP Column */}
           <GridItem>
             <VStack
@@ -57,7 +108,7 @@ export default function Footer() {
                 SITEMAP
               </Text>
               <VStack
-                align={{ base: "center", md: "start" }}
+                align={{ base: "start", md: "start" }}
                 spaceX={0}
                 gap={{ base: "2", md: "3" }}
               >
@@ -90,6 +141,47 @@ export default function Footer() {
             </VStack>
           </GridItem>
 
+          {/* SUPPORT Column */}
+          <GridItem>
+            <VStack
+              align={{ base: "start", md: "start" }}
+              spaceX={0}
+              gap={{ base: "3", md: "5" }}
+            >
+              <Text fontSize="16px" fontWeight="medium" color="#080930">
+                SUPPORT
+              </Text>
+              <VStack
+                align={{ base: "start", md: "start" }}
+                spaceX={0}
+                gap={{ base: "2", md: "3" }}
+              >
+                <Link
+                  href="/contact"
+                  fontSize="14px"
+                  margin="0"
+                  color="#0A142F"
+                >
+                  Contact Us
+                </Link>
+                <Link
+                  href="/whatsapp"
+                  fontSize="14px"
+                  margin="0"
+                  color="#0A142F"
+                >
+                  WhatsApp Chat
+                </Link>
+                <Link href="/status" fontSize="14px" margin="0" color="#0A142F">
+                  Status Page
+                </Link>
+                <Link href="/faqs" fontSize="14px" margin="0" color="#0A142F">
+                  FAQs
+                </Link>
+              </VStack>
+            </VStack>
+          </GridItem>
+
           {/* SOCIALS Column */}
           <GridItem>
             <VStack
@@ -101,7 +193,7 @@ export default function Footer() {
                 SOCIALS
               </Text>
               <VStack
-                align={{ base: "center", md: "start" }}
+                align={{ base: "start", md: "start" }}
                 spaceX={0}
                 gap={{ base: "2", md: "3" }}
               >
@@ -136,93 +228,6 @@ export default function Footer() {
                   color="#0A142F"
                 >
                   Twitter
-                </Link>
-              </VStack>
-            </VStack>
-          </GridItem>
-
-          {/* SUPPORT Column */}
-          <GridItem>
-            <VStack
-              align={{ base: "center", md: "start" }}
-              spaceX={0}
-              gap={{ base: "3", md: "5" }}
-            >
-              <Text fontSize="16px" fontWeight="medium" color="#080930">
-                SUPPORT
-              </Text>
-              <VStack
-                align={{ base: "center", md: "start" }}
-                spaceX={0}
-                gap={{ base: "2", md: "3" }}
-              >
-                <Link
-                  href="/contact"
-                  fontSize="14px"
-                  margin="0"
-                  color="#0A142F"
-                >
-                  Contact Us
-                </Link>
-                <Link
-                  href="/whatsapp"
-                  fontSize="14px"
-                  margin="0"
-                  color="#0A142F"
-                >
-                  WhatsApp Chat
-                </Link>
-                <Link href="/status" fontSize="14px" margin="0" color="#0A142F">
-                  Status Page
-                </Link>
-                <Link href="/faqs" fontSize="14px" margin="0" color="#0A142F">
-                  FAQs
-                </Link>
-              </VStack>
-            </VStack>
-          </GridItem>
-
-          {/* LEGAL Column */}
-          <GridItem>
-            <VStack
-              align={{ base: "center", md: "start" }}
-              spaceX={0}
-              gap={{ base: "3", md: "5" }}
-            >
-              <Text fontSize="16px" fontWeight="medium" color="#080930">
-                LEGAL
-              </Text>
-              <VStack
-                align={{ base: "center", md: "start" }}
-                spaceX={0}
-                gap={{ base: "2", md: "3" }}
-              >
-                <Link
-                  href="/privacy"
-                  fontSize="14px"
-                  margin="0"
-                  color="#0A142F"
-                >
-                  Privacy Policy
-                </Link>
-                <Link href="/terms" fontSize="14px" margin="0" color="#0A142F">
-                  Terms of Service
-                </Link>
-                <Link
-                  href="/cookies"
-                  fontSize="14px"
-                  margin="0"
-                  color="#0A142F"
-                >
-                  Cookie Policy
-                </Link>
-                <Link
-                  href="/compliance"
-                  fontSize="14px"
-                  margin="0"
-                  color="#0A142F"
-                >
-                  Compliance
                 </Link>
               </VStack>
             </VStack>
