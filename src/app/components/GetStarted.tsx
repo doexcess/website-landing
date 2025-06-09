@@ -11,7 +11,11 @@ import { FiPlayCircle } from "react-icons/fi";
 
 export default function GetStarted() {
   // Responsive values
-  const buttonDirection = useBreakpointValue({ base: "column", md: "row" });
+  const buttonDirection = useBreakpointValue({
+    base: "column",
+    sm: "row",
+    md: "row",
+  });
   const buttonWidth = useBreakpointValue({ base: "full", md: "227px" });
   const textAlign = useBreakpointValue({ base: "center", md: "left" });
   const stackAlign = useBreakpointValue({ base: "center", md: "start" });
