@@ -34,7 +34,7 @@ export default function Home() {
       align="center"
       justify="center"
       overflow="hidden"
-      px={{ base: 4, md: 6, lg: 8 }}
+      px={{ base: 4, md: 0, lg: 0 }}
       pb={{ base: 8, md: 12, lg: 16 }}
       pt={{ base: 130, md: 100, lg: 200 }}
       position="relative"
