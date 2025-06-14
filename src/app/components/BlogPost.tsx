@@ -166,7 +166,8 @@ export default function BlogPost() {
           css={{
             "&::-webkit-scrollbar": { display: "none" },
             "-ms-overflow-style": "none",
-            "scrollbar-width": "none",
+            // "scrollbar-width": "none",
+            scrollbarWidth: "none",
           }}
         >
           {blogPosts.map((post, i) => (
