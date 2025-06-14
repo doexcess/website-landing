@@ -33,7 +33,7 @@ export default function Features() {
       backgroundColor="#FFFFFF"
     >
       <Container maxW="container.xl" px={{ base: 4, md: 6 }}>
-        <VStack spaceX={{ base: 4, md: 6 }}>
+        <VStack spaceX={{ base: 0, md: 6 }}>
           <HStack justify="center">
             <Box
               backgroundColor="#4045E1"
@@ -62,7 +62,6 @@ export default function Features() {
             color="#080930"
             fontSize={headingSize}
             textAlign="center"
-            px={{ base: 2, sm: 0 }}
             lineHeight="tall"
           >
             Features That Make Your Business Easier
