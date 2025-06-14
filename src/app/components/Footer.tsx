@@ -35,7 +35,10 @@ export default function Footer() {
           gap={{ base: 6, md: 8 }}
         >
           <GridItem colSpan={{ base: 2, md: 1 }}>
-            <VStack align={{ base: "start", md: "start" }}>
+            <VStack
+              align={{ base: "start", md: "start" }}
+              mb={{ base: 15, sm: 0 }}
+            >
               <Image
                 src="/images/header-logo.png"
                 alt="doexcess"
