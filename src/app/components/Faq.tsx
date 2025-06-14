@@ -71,7 +71,7 @@ export default function Faq() {
       py={{ base: 8, md: 12 }}
     >
       <Container maxW="container.xl" px={{ base: 4, md: 6 }}>
-        <VStack spacing={{ base: 4, md: 6 }}>
+        <VStack>
           <HStack justify="center">
             <Box
               backgroundColor="#4045E1"
