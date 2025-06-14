@@ -191,9 +191,9 @@ export default function BlogPost() {
                 bottom={0}
                 left={0}
                 right={0}
-                height="40%"
-                bg="rgba(255, 255, 255, 0.8)"
-                backdropFilter="blur(8px)"
+                height="30%"
+                bg="rgba(255, 255, 255, 0.3)"
+                backdropFilter="blur(2px)"
                 css={{ "-webkit-backdrop-filter": "blur(8px)" }}
               />
 
