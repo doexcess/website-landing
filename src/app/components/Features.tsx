@@ -52,7 +52,7 @@ export default function Features() {
                 fontSize={{ base: "10px", md: "xs" }}
               >
                 <DiamondIcon />
-                Blog Post
+                Features
               </Text>
             </Box>
           </HStack>
