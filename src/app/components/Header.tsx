@@ -66,7 +66,11 @@ export default function Header({ handleNav }: HeaderProps) {
       zIndex="sticky"
       background="transparent"
     >
-      <Container maxW="container.xl" px={{ base: 4, md: 6 }}>
+      <Container
+        maxW="container.xl"
+        // px={{ base: 4, md: 6 }}
+        px={{ base: 0, md: 6 }}
+      >
         <Flex
           direction={{ base: "column", md: "row" }}
           align={{ base: "stretch", md: "center" }}
