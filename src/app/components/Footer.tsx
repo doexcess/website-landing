@@ -264,6 +264,7 @@ export default function Footer() {
                 outline="none"
                 border="none"
                 backgroundColor="transparent"
+                color="#000"
               />
               <Icon as={CiMail} boxSize={5} color="rgba(64, 69, 225, 1)" />
             </HStack>

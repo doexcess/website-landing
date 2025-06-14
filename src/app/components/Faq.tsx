@@ -118,7 +118,7 @@ export default function Faq() {
 
           <Box pt={8} width="100%" maxWidth="800px">
             {Object.entries(faqs).map(([category, items]) => (
-              <Stack gap="2" key={category} mb={8}>
+              <Stack gap="2" key={category} mb={8} color="#000">
                 <Text fontWeight="bold" fontSize="lg">
                   {category}
                 </Text>
