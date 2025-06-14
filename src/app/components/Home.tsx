@@ -94,7 +94,7 @@ export default function Home() {
                 color="#080930"
                 fontSize={{ base: "xs", sm: "sm", md: "md" }}
                 overflow={{ base: "hidden", md: "hidden" }}
-                // textOverflow={{ base: "none", md: "none" }}
+                textOverflow="ellipsis"
                 px={1}
               >
                 We built Doexcess after struggling with messy tools ourselves

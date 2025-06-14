@@ -8,6 +8,7 @@ import Footer from "./Footer";
 import GetStarted from "./GetStarted";
 import Header from "./Header";
 import Home from "./Home";
+import Faq from "./Faq";
 
 export default function Client() {
   const homeRef = useRef<HTMLDivElement>(null);
@@ -15,6 +16,7 @@ export default function Client() {
   const featuresRef = useRef<HTMLDivElement>(null);
   const pricingRef = useRef<HTMLDivElement>(null);
   const blogsRef = useRef<HTMLDivElement>(null);
+  const faqRef = useRef<HTMLDivElement>(null);
 
   const handleNav = (item: string) => {
     switch (item) {
@@ -52,11 +54,14 @@ export default function Client() {
       <div ref={featuresRef}>
         <Features />
       </div>
-      <div ref={pricingRef}>
-        <GetStarted />
-      </div>
       <div ref={blogsRef}>
         <BlogPost />
+      </div>
+      <div ref={faqRef}>
+        <Faq />
+      </div>
+      <div ref={pricingRef}>
+        <GetStarted />
       </div>
       <Footer />
     </>
