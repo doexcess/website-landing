@@ -137,10 +137,14 @@ export default function Faq() {
                       borderRadius="8px"
                     >
                       <Accordion.ItemTrigger>
-                        <Span flex="1">{item.title}</Span>
+                        <Span flex="1" fontSize={{ base: "15px", md: "18px" }}>
+                          {item.title}
+                        </Span>
                         <Accordion.ItemIndicator />
                       </Accordion.ItemTrigger>
-                      <Accordion.ItemContent>
+                      <Accordion.ItemContent
+                        fontSize={{ base: "13px", md: "16px" }}
+                      >
                         <Accordion.ItemBody>
                           {item.text || "Answer to be added..."}
                         </Accordion.ItemBody>

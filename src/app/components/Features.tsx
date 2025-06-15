@@ -113,6 +113,7 @@ export default function Features() {
                   border="1px solid rgba(237, 238, 252, 1)"
                   p={{ base: 2, md: 5 }}
                   backgroundColor="rgba(247, 248, 248, 1)"
+                  color="#000"
                 >
                   <Image
                     src={feature.src}
@@ -146,6 +147,7 @@ export default function Features() {
                   border="1px solid rgba(237, 238, 252, 1)"
                   p={{ base: 2, md: 5 }}
                   backgroundColor="rgba(247, 248, 248, 1)"
+                  color="#000"
                 >
                   <Image
                     src={feature.src}
