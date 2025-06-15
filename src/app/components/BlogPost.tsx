@@ -91,11 +91,13 @@ export default function BlogPost() {
       align="center"
       justify="center"
       overflow="hidden"
-      spaceX={{ base: 6, md: 10 }}
+      // spaceX={{ base: 6, md: 10 }}
       py={{ base: 8, md: 12 }}
     >
       <Container maxW="container.xl" px={{ base: 4, md: 6 }}>
-        <VStack spaceX={{ base: 4, md: 6 }}>
+        <VStack
+        spaceX={{ base: 4, md: 6 }}
+        >
           <HStack justify="center">
             <Box
               backgroundColor="#4045E1"
@@ -161,7 +163,7 @@ export default function BlogPost() {
         <HStack
           overflowX="auto"
           spaceX={{ base: 6, md: 8, lg: 10 }}
-          px={{ base: 4, md: 6 }}
+          // px={{ base: 4, md: 6 }}
           py={2}
           css={{
             "&::-webkit-scrollbar": { display: "none" },
