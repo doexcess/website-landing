@@ -21,6 +21,37 @@ export default function Features() {
     lg: "48px",
   });
 
+  const features1 = [
+    {
+      title: "Stress-Free Member Onboarding",
+      body: "New members sign up in seconds (email, phone, social) with instant role assignments and guided checklists.",
+      src: "/images/features/stress-free1.png",
+    },
+    {
+      title: "Automated Engagement",
+      body: "Send bulk email messages automatically using smart templates. Track opens, clicks, replies—live.",
+      src: "/images/features/automated1.png",
+    },
+  ];
+
+  const features2 = [
+    {
+      title: "Sell Courses & Events",
+      body: "Drag-and-drop courses, QR ticketing, and branded checkout. Accept cards, PayPal, coupons.",
+      src: "/images/features/sell-courses1.png",
+    },
+    {
+      title: "Actionable Analytics",
+      body: "Live dashboards, drill-down filters, and auto-generated reports. Find hidden growth gems.",
+      src: "/images/features/actionable1.png",
+    },
+    {
+      title: "Admin Control",
+      body: "Bulk user actions, audit logs, GDPR security. Monitor everything from one dashboard.",
+      src: "/images/features/admin-control1.png",
+    },
+  ];
+
   return (
     <VStack
       minHeight={{ base: "500px", md: "600px", lg: "700px" }}
@@ -71,18 +102,32 @@ export default function Features() {
               templateColumns={{ base: "1fr", md: "repeat(2,1fr)" }}
               gap={{ base: 5, sm: 10 }}
             >
-              <Image
-                src="/images/features/stress-free.png"
-                alt="Stress-Free Member Onboarding"
-                width="588"
-                height="432"
-              />
-              <Image
-                src="/images/features/automated.png"
-                alt="Automated Engagement"
-                width="588"
-                height="432"
-              />
+              {features1.map((feature) => (
+                <VStack
+                  width="588"
+                  height="432"
+                  key={feature.title}
+                  gap={{ base: 5, md: 10 }}
+                  align="center"
+                  borderRadius="16px"
+                  border="1px solid rgba(237, 238, 252, 1)"
+                  p={{ base: 2, md: 5 }}
+                  backgroundColor="rgba(247, 248, 248, 1)"
+                >
+                  <Image
+                    src={feature.src}
+                    alt={feature.title.toLowerCase()}
+                    width="401"
+                    height="295"
+                  />
+                  <VStack gap={5} align="start">
+                    <Heading>{feature.title}</Heading>
+                    <Text maxWidth="535px" fontWeight="400">
+                      {feature.body}
+                    </Text>
+                  </VStack>
+                </VStack>
+              ))}
             </SimpleGrid>
             <SimpleGrid
               templateColumns={{ base: "1fr", md: "repeat(3,1fr)" }}
@@ -90,24 +135,32 @@ export default function Features() {
               justifyItems="center"
               alignItems="center"
             >
-              <Image
-                src="/images/features/sell-courses.png"
-                alt="Sell Courses & Events"
-                width="588"
-                height="432"
-              />
-              <Image
-                src="/images/features/actionable.png"
-                alt="Actionable Analytics"
-                width="588"
-                height="432"
-              />
-              <Image
-                src="/images/features/admin-control.png"
-                alt="Admin Control"
-                width="588"
-                height="432"
-              />
+              {features2.map((feature) => (
+                <VStack
+                  width="588"
+                  height="432"
+                  key={feature.title}
+                  gap={{ base: 5, md: 10 }}
+                  align="center"
+                  borderRadius="16px"
+                  border="1px solid rgba(237, 238, 252, 1)"
+                  p={{ base: 2, md: 5 }}
+                  backgroundColor="rgba(247, 248, 248, 1)"
+                >
+                  <Image
+                    src={feature.src}
+                    alt={feature.title.toLowerCase()}
+                    width="401"
+                    height="295"
+                  />
+                  <VStack gap={5} align="start">
+                    <Heading>{feature.title}</Heading>
+                    <Text maxWidth="535px" fontWeight="400">
+                      {feature.body}
+                    </Text>
+                  </VStack>
+                </VStack>
+              ))}
             </SimpleGrid>
           </Stack>
         </VStack>
