@@ -116,7 +116,15 @@ export default function Faq() {
             up, automate, and manage your business operations with ease
           </Text>
 
-          <Box pt={8} width="100%" maxWidth="800px">
+          <Box
+            pt={8}
+            width="100%"
+            maxWidth="800px"
+            background="url('/images/faqGrid.png')"
+            backgroundSize="contain"
+            backgroundPosition="center top"
+            backgroundRepeat="no-repeat"
+          >
             {Object.entries(faqs).map(([category, items]) => (
               <Stack gap="2" key={category} mb={8} color="#000">
                 <Text fontWeight="bold" fontSize="lg">
