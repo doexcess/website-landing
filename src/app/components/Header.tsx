@@ -100,6 +100,7 @@ export default function Header({ handleNav }: HeaderProps) {
               onClick={handleToggle}
               aria-label="Toggle menu"
               variant="ghost"
+              _hover={{ backgroundColor: "#ced0ff" }}
             >
               {isOpen ? (
                 <RxCross1 color="#080930" />
@@ -233,6 +234,9 @@ export default function Header({ handleNav }: HeaderProps) {
               w={{ base: "full", md: "78px" }}
               fontSize="16px"
               color="rgba(8, 9, 48, 1)"
+              // backgroundColor="#d8daf6"
+              backgroundColor="#e7e9f8"
+              borderRadius="12px"
             >
               Sign in
             </Button>
