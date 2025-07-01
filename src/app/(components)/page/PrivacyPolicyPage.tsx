@@ -33,7 +33,6 @@ const PrivacyPolicyPage = () => {
           </Text>
         </VStack>
       </Container>
-      <Footer />
     </Box>
   );
 };

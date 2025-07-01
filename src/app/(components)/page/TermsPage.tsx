@@ -33,7 +33,6 @@ const TermsPage = () => {
           </Text>
         </VStack>
       </Container>
-      <Footer />
     </Box>
   );
 };

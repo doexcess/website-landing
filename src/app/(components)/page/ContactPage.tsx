@@ -256,7 +256,6 @@ const ContactPage = () => {
           </form>
         </Box>
       </Container>
-      <Footer />
     </Box>
   );
 };

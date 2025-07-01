@@ -38,7 +38,6 @@ export default function Client() {
       <div ref={pricingRef}>
         <GetStarted />
       </div>
-      <Footer />
     </>
   );
 }
