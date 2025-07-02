@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import './globals.css';
 import { Provider } from '@/components/ui/provider';
 import localFont from 'next/font/local';
+import ReduxProvider from '@/redux/redux-provider';
 
 const Gilroy = localFont({
   src: [
@@ -43,14 +44,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang='en'>
-      <body
-        // className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-        className={`${Gilroy.className} antialiased`}
-        style={{ backgroundColor: '#fff' }}
-      >
-        <Provider>{children}</Provider>
-      </body>
-    </html>
+    <ReduxProvider>
+      <html lang='en'>
+        <body
+          // className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+          className={`${Gilroy.className} antialiased`}
+          style={{ backgroundColor: '#fff' }}
+        >
+          <Provider>{children}</Provider>
+        </body>
+      </html>
+    </ReduxProvider>
   );
 }
