@@ -8,8 +8,13 @@ import {
   Stack,
   Text,
   VStack,
+  Button,
+  CloseButton,
+  Dialog,
+  Portal,
 } from '@chakra-ui/react';
 import Image from 'next/image';
+import { Suspense } from 'react';
 
 export default function About() {
   const headingSize = {
@@ -146,19 +151,8 @@ export default function About() {
                 something: many creators were struggling to manage their digital
                 offerings effectively. There were too many moving parts—too many
                 tools that didn&apos;t quite fit together. That&apos;s when it
-                hit me: “What if we build an all that can solve this specific
-                problem?”...{' '}
-                <Link href='/about' style={{ textDecoration: 'none' }}>
-                  <Box
-                    as='span'
-                    color='#4045E1'
-                    fontWeight='bold'
-                    fontSize={{ base: 'md', md: 'lg' }}
-                    _hover={{ textDecoration: 'underline', cursor: 'pointer' }}
-                  >
-                    Read more
-                  </Box>
-                </Link>
+                hit me: "What if we build an all that can solve this specific
+                problem?"... <ViewStoryModal />
               </Text>
             </VStack>
           </VStack>
@@ -189,3 +183,97 @@ export default function About() {
     </Stack>
   );
 }
+
+const ViewStoryModal = () => {
+  return (
+    <Dialog.Root>
+      <Dialog.Trigger asChild>
+        <Box
+          as='span'
+          color='#4045E1'
+          fontWeight='bold'
+          fontSize={{ base: 'md', md: 'lg' }}
+          _hover={{ textDecoration: 'underline', cursor: 'pointer' }}
+        >
+          Read more
+        </Box>
+      </Dialog.Trigger>
+      <Portal>
+        <Dialog.Backdrop />
+        <Dialog.Positioner>
+          <Dialog.Content backgroundColor='white'>
+            <Dialog.Header>
+              <Dialog.Title>The Birth of Doexcess</Dialog.Title>
+            </Dialog.Header>
+            <Dialog.Body>
+              <Box
+                color='gray.700'
+                fontSize={{ base: 'md', md: 'lg' }}
+                lineHeight={1.7}
+              >
+                <Text mb={4}>
+                  It all started early 2024 when I began working on a project I
+                  initially called SkillUp. The idea was simple: make practical
+                  knowledge affordable and accessible to as many people as
+                  possible. But when I discovered the name was already taken, I
+                  rebranded it to LearnExcess and kept building—layer by layer.
+                </Text>
+                <Text mb={4}>
+                  I've always had a passion for creating things, especially
+                  tools that solve real problems. And over time, I noticed
+                  something: many creators were struggling to manage their
+                  digital offerings effectively. There were too many moving
+                  parts—too many tools that didn't quite fit together. That's
+                  when it hit me: "What if we build an all that can solve this
+                  specific problem?"
+                </Text>
+                <Text mb={4}>
+                  So, after a lot of ideation, conviction, and planning, I
+                  decided to take LearnExcess in a new direction—and that's how
+                  Doexcess was born.
+                </Text>
+                <Text mb={4}>
+                  The goal is to build a platform that helps creators and
+                  businesses streamline processes, automate tasks, and manage
+                  digital products seamlessly.
+                </Text>
+                <Text mb={4}>
+                  Once I had the foundation set, I reached out to Tofunmi, who
+                  believed in the vision and jumped in to help. Starting with
+                  the logo design, Ben, a longtime friend, was also quick to get
+                  on board, and soon after, Lynn joined the team too.
+                </Text>
+                <Text mb={4}>
+                  Now, we're building something we truly believe in—a powerful,
+                  easy-to-use solution that takes the hassle out of work,
+                  empowers creators, and puts cutting-edge technology into
+                  people's hands.
+                </Text>
+                <Text>
+                  At its core, Doexcess is about making tasks easier. We're here
+                  to help people focus less on the busywork and more on what
+                  really matters—creating, growing, and delivering value.
+                </Text>
+                <Text
+                  mt={8}
+                  color='gray.500'
+                  fontSize='sm'
+                  fontStyle='italic'
+                  textAlign='left'
+                >
+                  Emmanuel Olaleye
+                  <br />
+                  Co-Founder/Software Engineer
+                </Text>
+              </Box>
+            </Dialog.Body>
+
+            <Dialog.CloseTrigger asChild>
+              <CloseButton size='sm' color='black' />
+            </Dialog.CloseTrigger>
+          </Dialog.Content>
+        </Dialog.Positioner>
+      </Portal>
+    </Dialog.Root>
+  );
+};

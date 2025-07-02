@@ -256,23 +256,6 @@ const TermsPage = () => {
           <Box pl={4} color='#434453'>
             <Text>
               Email: <b>hello@doexcess.com</b>{' '}
-              <Box
-                as='button'
-                ml={2}
-                px={2}
-                py={1}
-                fontSize='sm'
-                color='#4045E1'
-                bg='gray.100'
-                borderRadius='md'
-                _hover={{ bg: 'gray.200' }}
-                onClick={() => {
-                  navigator.clipboard.writeText('hello@doexcess.com');
-                  toast.success('Email copied to clipboard!');
-                }}
-              >
-                Copy Email
-              </Box>
             </Text>
             <Text>Business Name: Doexcess</Text>
             <Text>Website: https://doexcess.com</Text>

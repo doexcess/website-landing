@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { Suspense, useState } from 'react';
 import { useSearchParams, useRouter } from 'next/navigation';
 import {
   Box,
@@ -12,6 +12,7 @@ import {
   Stack,
   Icon,
   Image,
+  Container,
 } from '@chakra-ui/react';
 import { FaUserPlus } from 'react-icons/fa';
 import useBusinessInfo from '@/hooks/page/useBusinessInfo';
@@ -19,8 +20,17 @@ import { useDispatch } from 'react-redux';
 import { addCustomer } from '@/redux/slices/onboardSlice';
 import toast from 'react-hot-toast';
 import BasicFooter from '@/app/(components)/BasicFooter';
+import Link from 'next/link';
 
 const SignupPage = () => {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <SignupForm />
+    </Suspense>
+  );
+};
+
+const SignupForm = () => {
   const { business_info } = useBusinessInfo();
   const dispatch = useDispatch();
   const router = useRouter();
@@ -88,6 +98,27 @@ const SignupPage = () => {
   const cardW = { base: '100%', md: '900px' };
   const cardMinH = { base: '20vh', md: '600px' };
 
+  if (!businessId) {
+    return (
+      <Container maxW='container.sm' py={32}>
+        <Box
+          bg='#fff'
+          p={8}
+          borderRadius='16px'
+          boxShadow='0 2px 16px 0 rgba(19, 69, 98, 0.06)'
+        >
+          <Heading as='h2' size='lg' color='#4045E1' mb={4} textAlign='center'>
+            Invalid Access
+          </Heading>
+          <Text color='#434453' textAlign='center'>
+            This signup page requires a valid business ID. Please use the
+            correct link provided by your business or organization.
+          </Text>
+        </Box>
+      </Container>
+    );
+  }
+
   return (
     <Flex
       minH='100vh'
@@ -96,7 +127,7 @@ const SignupPage = () => {
       justify='center'
       direction='column'
       py={{ base: 8, md: 0 }}
-      px={{ base: 10, md: 0 }}
+      px={{ base: 4, md: 0 }}
     >
       <Box
         w={cardW}
@@ -118,9 +149,11 @@ const SignupPage = () => {
           justifyContent='center'
         >
           {/* Logo */}
-          <Flex align='center' mb={8}>
-            <Image src='/images/header-logo.png' alt='doexcess' width={150} />
-          </Flex>
+          <Link href='/'>
+            <Flex align='center' mb={8}>
+              <Image src='/images/header-logo.png' alt='doexcess' width={150} />
+            </Flex>
+          </Link>
           <Heading
             as='h1'
             size='lg'

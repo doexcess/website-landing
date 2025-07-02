@@ -357,7 +357,6 @@ export default function AboutPage() {
       </Box>
       {/* CTA Section */}
       <GetStarted />
-      {/* Footer */}
     </Box>
   );
 }
