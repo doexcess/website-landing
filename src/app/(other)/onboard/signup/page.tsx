@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { useSearchParams } from 'next/navigation';
+import { useSearchParams, useRouter } from 'next/navigation';
 import {
   Box,
   Flex,
@@ -11,19 +11,28 @@ import {
   Button,
   Stack,
   Icon,
-  useBreakpointValue,
   Image,
 } from '@chakra-ui/react';
 import { FaUserPlus } from 'react-icons/fa';
 import useBusinessInfo from '@/hooks/page/useBusinessInfo';
+import { useDispatch } from 'react-redux';
+import { addCustomer } from '@/redux/slices/onboardSlice';
+import toast from 'react-hot-toast';
+import BasicFooter from '@/app/(components)/BasicFooter';
 
 const SignupPage = () => {
   const { business_info } = useBusinessInfo();
+  const dispatch = useDispatch();
+  const router = useRouter();
   const searchParams = useSearchParams();
   const businessId = searchParams.get('business_id');
-  const businessName = businessId
-    ? businessId.replace(/[-_]/g, ' ').replace(/\b\w/g, (l) => l.toUpperCase())
-    : 'Your Organization';
+  const businessName =
+    business_info?.business_name ||
+    (businessId
+      ? businessId
+          .replace(/[-_]/g, ' ')
+          .replace(/\b\w/g, (l) => l.toUpperCase())
+      : 'Your Organization');
 
   const [form, setForm] = useState({ name: '', email: '', phone: '' });
   const [touched, setTouched] = useState({
@@ -47,23 +56,37 @@ const SignupPage = () => {
   const errors = validate();
   const isValid = !errors.name && !errors.email && !errors.phone;
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setTouched({ name: true, email: true, phone: true });
     setSubmitted(true);
-    if (isValid) {
-      setTimeout(() => {
-        alert('Signup successful!');
+    if (isValid && businessId) {
+      try {
+        await dispatch(
+          addCustomer({
+            name: form.name,
+            email: form.email,
+            phone: form.phone,
+            business_id: businessId,
+          }) as any
+        ).unwrap();
+        toast.success('Signup successful!');
         setForm({ name: '', email: '', phone: '' });
-        setSubmitted(false);
         setTouched({ name: false, email: false, phone: false });
-      }, 1000);
+        router.push('/onboard/success');
+      } catch (err: any) {
+        toast.error(err?.message || 'Signup failed. Please try again.');
+      } finally {
+        setSubmitted(false);
+      }
+    } else {
+      setSubmitted(false);
     }
   };
 
   // Responsive width for the card
-  const cardW = useBreakpointValue({ base: '100%', md: '900px' });
-  const cardMinH = useBreakpointValue({ base: '100vh', md: '600px' });
+  const cardW = { base: '100%', md: '900px' };
+  const cardMinH = { base: '20vh', md: '600px' };
 
   return (
     <Flex
@@ -73,6 +96,7 @@ const SignupPage = () => {
       justify='center'
       direction='column'
       py={{ base: 8, md: 0 }}
+      px={{ base: 10, md: 0 }}
     >
       <Box
         w={cardW}
@@ -82,7 +106,7 @@ const SignupPage = () => {
         boxShadow='0 8px 32px 0 rgba(30,41,59,0.10)'
         overflow='hidden'
         display='flex'
-        flexDir={{ base: 'column', md: 'row' }}
+        flexDir={{ base: 'column-reverse', md: 'row' }}
       >
         {/* Left: Form */}
         <Box
@@ -104,11 +128,11 @@ const SignupPage = () => {
             color='gray.800'
             fontWeight='extrabold'
           >
-            Join {businessName}
+            Join {business_info?.business_name}
           </Heading>
           <Text color='gray.500' mb={8} fontSize='md'>
-            Welcome! Fill in your details to join <b>{businessName}</b> and get
-            started.
+            Welcome! Fill in your details to join{' '}
+            <b>{business_info?.business_name}</b> and get started.
           </Text>
           <form onSubmit={handleSubmit}>
             <Box color='#000'>
@@ -205,7 +229,7 @@ const SignupPage = () => {
               >
                 {submitted && isValid
                   ? 'Submitting...'
-                  : `Join ${businessName}`}
+                  : `Join ${business_info?.business_name}`}
               </Button>
             </Box>
           </form>
@@ -215,7 +239,7 @@ const SignupPage = () => {
           flex='1'
           bgGradient='linear(to-br, #4045E1 0%, #3b82f6 100%)'
           color='white'
-          display='flex'
+          display={{ base: 'none', md: 'flex' }}
           alignItems='center'
           justifyContent='center'
           p={0}
@@ -232,9 +256,7 @@ const SignupPage = () => {
           />
         </Box>
       </Box>
-      <Box color='gray.800' marginTop='5'>
-        <Text>&copy; Doexcess {new Date().getFullYear()}</Text>
-      </Box>
+      <BasicFooter />
     </Flex>
   );
 };

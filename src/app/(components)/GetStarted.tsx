@@ -5,7 +5,6 @@ import {
   Heading,
   Text,
   ButtonGroup,
-  useBreakpointValue,
   Icon,
   HStack,
 } from '@chakra-ui/react';
@@ -13,20 +12,20 @@ import { FiPlayCircle } from 'react-icons/fi';
 
 export default function GetStarted() {
   // Responsive values
-  const buttonDirection = useBreakpointValue({
+  const buttonDirection = {
     base: 'column',
     md: 'row',
-  });
-  const buttonWidth = useBreakpointValue({ base: 'full', md: '227px' });
-  const textAlign = useBreakpointValue({ base: 'center', md: 'left' });
-  const stackAlign = useBreakpointValue({ base: 'center', md: 'start' });
-  const paddingX = useBreakpointValue({ base: 4, sm: 6, md: 8, lg: 10 });
-  const headingSize = useBreakpointValue({
+  };
+  const buttonWidth = { base: 'full', md: '227px' };
+  const textAlign = { base: 'center', md: 'left' };
+  const stackAlign = { base: 'center', md: 'start' };
+  const paddingX = { base: 4, sm: 6, md: 8, lg: 10 };
+  const headingSize = {
     base: '30px',
     sm: '38px',
     md: '42px',
     lg: '48px',
-  });
+  };
 
   return (
     <VStack

@@ -32,9 +32,9 @@ export default function Client() {
       {/* <div ref={blogsRef}>
         <BlogPost />
       </div> */}
-      {/* <div ref={faqRef}>
+      <div ref={faqRef}>
         <Faq />
-      </div> */}
+      </div>
       <div ref={pricingRef}>
         <GetStarted />
       </div>

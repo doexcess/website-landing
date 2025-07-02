@@ -3,27 +3,27 @@ import {
   Box,
   Container,
   Heading,
+  Link,
   SimpleGrid,
   Stack,
   Text,
   VStack,
-  useBreakpointValue,
 } from '@chakra-ui/react';
 import Image from 'next/image';
 
 export default function About() {
-  const headingSize = useBreakpointValue({
+  const headingSize = {
     base: '2xl',
     sm: '3xl',
     md: '4xl',
     lg: '5xl',
-  });
+  };
 
-  const subHeadingSize = useBreakpointValue({
+  const subHeadingSize = {
     base: 'xl',
     sm: '2xl',
     md: '3xl',
-  });
+  };
 
   return (
     <Stack
@@ -38,7 +38,7 @@ export default function About() {
     >
       <Container maxW='container.xl'>
         <SimpleGrid
-          columns={{ base: 1, md: 2 }}
+          columns={{ base: 1, md: 1, lg: 2 }}
           alignItems='center'
           spaceX={{ base: 8, md: 10 }}
         >
@@ -85,13 +85,34 @@ export default function About() {
               <Text
                 color='#434453'
                 fontSize={{ base: 'md', md: 'lg' }}
+                display={{ mdDown: 'none', lg: 'block' }}
                 lineHeight={1.6}
                 textAlign={{ base: 'center', md: 'start' }}
               >
-                At Doexcess, we believe running a business, community, or event
-                shouldn&apos;t feel like juggling 10 tools at once. That&apos;s
-                why we built an all-in-one platform that automates the
-                busywork—so you can focus on what truly matters: your people.
+                At Doexcess, we believe digital work shouldn&apos;t feel
+                disorganized or overwhelming. We&apos;ve seen people experience
+                the stress of juggling scattered tools, missing tasks, and
+                managing important workflows with systems that simply
+                didn&apos;t scale. So we decided to build something more
+                efficient.
+              </Text>
+
+              {/* Mobile */}
+              <Text
+                color='#434453'
+                fontSize={{ base: 'md', md: 'lg' }}
+                display={{ mdDown: 'block', lg: 'none' }}
+                lineHeight={1.6}
+                textAlign={{ base: 'center', md: 'start' }}
+              >
+                At Doexcess, we&apos;re building a platform that helps
+                individuals, teams, and organizations simplify tasks, reduce
+                chaos, and stay organized — all in one place. We&apos;ve seen
+                people experienced the stress of switching between tools,
+                missing deadlines, and managing scattered workflows. So we
+                created a smarter way to work. Doexcess is a system built to
+                help you optimize how you work — with more clarity, more
+                control, and less stress.
               </Text>
             </VStack>
 
@@ -114,25 +135,37 @@ export default function About() {
                 lineHeight={1.6}
                 textAlign={{ base: 'center', md: 'start' }}
               >
-                We started in [Year] after [Founder&apos;s Name], a [former
-                community leader/event organizer/business owner], grew
-                frustrated with clunky tools that made member management feel
-                like a chore. Why waste hours onboarding members, chasing
-                payments, or manually sending reminders when technology could do
-                it better?
+                It all started early last year when I began working on a project
+                I initially called SkillUp. The idea was simple: make practical
+                knowledge affordable and accessible to as many people as
+                possible. But when I discovered the name was already taken, I
+                rebranded it to Learnexcess and kept building—layer by layer.
                 <br />
-                <br />
-                So, we created Doexcess—a platform that combines the heart of
-                community-building with the brains of automation. Today,
-                thousands of teams worldwide use Doexcess to save time, boost
-                engagement, and grow smarter.
+                I&apos;ve always had a passion for creating things, especially
+                tools that solve real problems. And over time, I noticed
+                something: many creators were struggling to manage their digital
+                offerings effectively. There were too many moving parts—too many
+                tools that didn&apos;t quite fit together. That&apos;s when it
+                hit me: “What if we build an all that can solve this specific
+                problem?”...{' '}
+                <Link href='/about' style={{ textDecoration: 'none' }}>
+                  <Box
+                    as='span'
+                    color='#4045E1'
+                    fontWeight='bold'
+                    fontSize={{ base: 'md', md: 'lg' }}
+                    _hover={{ textDecoration: 'underline', cursor: 'pointer' }}
+                  >
+                    Read more
+                  </Box>
+                </Link>
               </Text>
             </VStack>
           </VStack>
 
           {/* Image - Hidden on mobile, visible on md and up */}
           <Box
-            display={{ base: 'none', md: 'flex' }}
+            display={{ base: 'none', md: 'none', lg: 'flex' }}
             width='full'
             height='full'
             justifyContent='center'

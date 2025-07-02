@@ -70,6 +70,7 @@ const onboardSlice = createSlice({
       })
       .addCase(viewBusinessInfo.fulfilled, (state, action) => {
         state.loading = false;
+        state.business_info = action.payload.data;
       })
       .addCase(viewBusinessInfo.rejected, (state, action) => {
         state.loading = false;

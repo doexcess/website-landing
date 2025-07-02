@@ -14,7 +14,6 @@ import {
   Button,
   Icon,
   Link,
-  useBreakpointValue,
 } from '@chakra-ui/react';
 import { MdEmail, MdPhone, MdLocationOn } from 'react-icons/md';
 import { FaTwitter, FaLinkedin, FaFacebook, FaInstagram } from 'react-icons/fa';
@@ -59,7 +58,7 @@ const socials = [
 ];
 
 const ContactPage = () => {
-  const headingSize = useBreakpointValue({ base: '2xl', md: '4xl' });
+  const headingSize = { base: '2xl', md: '4xl' };
   return (
     <Box bg='#fff' minH='100vh'>
       <Container maxW='container.xl' pt={{ base: 32, md: 40 }} pb={8}>

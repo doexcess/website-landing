@@ -81,14 +81,9 @@ export default function Footer() {
                 <Link href='/terms' fontSize='14px' margin='0' color='#0A142F'>
                   Terms of Service
                 </Link>
-                {/* <Link
-                  href='/cookies'
-                  fontSize='14px'
-                  margin='0'
-                  color='#0A142F'
-                >
-                  Cookie Policy
-                </Link> */}
+                <Link href='/faqs' fontSize='14px' margin='0' color='#0A142F'>
+                  FAQs
+                </Link>
                 {/* <Link
                   href='/compliance'
                   fontSize='14px'

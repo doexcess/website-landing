@@ -12,7 +12,6 @@ import {
   Button,
   Center,
   Icon,
-  useBreakpointValue,
 } from '@chakra-ui/react';
 import { FaUserPlus } from 'react-icons/fa';
 
@@ -88,11 +87,11 @@ const SignupPage = () => {
   }
 
   // Responsive form width
-  const formWidth = useBreakpointValue({
+  const formWidth = {
     base: '100%',
     sm: '400px',
     md: '380px',
-  });
+  };
 
   return (
     <Box

@@ -10,22 +10,21 @@ import {
   Stack,
   Text,
   VStack,
-  useBreakpointValue,
 } from '@chakra-ui/react';
 import Image from 'next/image';
 import { BsArrowRight } from 'react-icons/bs';
 import { FiPlayCircle } from 'react-icons/fi';
 
 export default function Home() {
-  const buttonDirection = useBreakpointValue({ base: 'column', lg: 'row' });
-  const buttonWidth = useBreakpointValue({ base: 'full', md: '227px' });
-  const headingSize = useBreakpointValue({
+  const buttonDirection = { base: 'column', lg: 'row' };
+  const buttonWidth = { base: 'full', md: '227px' };
+  const headingSize = {
     base: '2xl',
     sm: '3xl',
     md: '4xl',
     lg: '5xl',
     xl: '63px',
-  });
+  };
 
   return (
     <Stack

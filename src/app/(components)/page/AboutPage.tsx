@@ -11,7 +11,6 @@ import {
   HStack,
   Image,
   Avatar,
-  useBreakpointValue,
   Flex,
   Button,
 } from '@chakra-ui/react';
@@ -63,19 +62,19 @@ const team = [
 ];
 
 export default function AboutPage() {
-  const headingSize = useBreakpointValue({
+  const headingSize = {
     base: '2xl',
     sm: '3xl',
     md: '4xl',
     lg: '5xl',
-  });
+  };
   const aboutRef = useRef(null);
 
   return (
     <Box bg='#F7F8F8'>
       {/* Hero Section */}
       <Stack
-        minHeight={{ base: 'auto', md: '600px', lg: '200px' }}
+        minHeight={{ base: 'auto', md: '200px', lg: '200px' }}
         width='full'
         align='center'
         justify='center'
@@ -133,7 +132,7 @@ export default function AboutPage() {
           display='flex'
           flexDir={{ base: 'column', md: 'row' }}
           alignItems='center'
-          gap={{ base: 8, md: 10 }}
+          gap={{ base: 8, md: 20 }}
           mt={0}
         >
           <Box flex='1' w='full' mb={{ base: 6, md: 0 }}>
@@ -156,35 +155,20 @@ export default function AboutPage() {
           <Box flex='1' w='full'>
             <VStack align='start' gap={4} w='full'>
               <Text color='#434453' fontSize={{ base: 'sm', md: 'md' }}>
-                Doexcess started in 2024 when our small team of community
-                managers and developers got tired of:
+                At Doexcess, we believe digital work shouldn't feel disorganized
+                or overwhelming. We&apos;ve seen people experience the stress of
+                juggling scattered tools, missing tasks, and managing important
+                workflows with systems that simply didn&apos;t scale.
+                <br />
+                <br /> So we decided to build something more efficient. <br />
+                <br /> Doexcess is a task optimization platform built to help
+                individuals and organizations stay on top of what matters —
+                without the patchwork of disconnected apps. From solopreneurs to
+                growing teams, we&apos;re creating a space where structure meets
+                simplicity, and productivity becomes second nature. We're a team
+                of creators, developers, and operators — and we&apos;re building
+                this for people who are ready to work smarter.
               </Text>
-              <Box
-                as='ul'
-                pl={5}
-                color='#434453'
-                fontSize={{ base: 'sm', md: 'md' }}
-              >
-                <li>Patching together 10 tools just to onboard members</li>
-                <li>
-                  Missing engagement opportunities because manual follow-ups
-                  fell through the cracks
-                </li>
-                <li>Wasting hours on stuff that felt automatable</li>
-              </Box>
-              <Text color='#434453' fontSize={{ base: 'sm', md: 'md' }} mt={2}>
-                So we built a simple all-in-one platform to handle:
-              </Text>
-              <Box
-                as='ul'
-                pl={5}
-                color='#434453'
-                fontSize={{ base: 'sm', md: 'md' }}
-              >
-                <li>Member onboarding</li>
-                <li>WhatsApp/email automation</li>
-                <li>Course & event management</li>
-              </Box>
             </VStack>
           </Box>
         </Container>
@@ -314,7 +298,7 @@ export default function AboutPage() {
                     position='relative'
                     width={{ base: '100%', sm: '90%', md: '100%' }}
                     maxW='100%'
-                    height={{ base: '300px', md: '400px' }}
+                    height={{ base: '400px', md: '400px' }}
                     display='flex'
                     flexDirection='column'
                     alignItems='center'
@@ -374,7 +358,6 @@ export default function AboutPage() {
       {/* CTA Section */}
       <GetStarted />
       {/* Footer */}
-      <Footer />
     </Box>
   );
 }

@@ -1,9 +1,11 @@
-import type { Metadata } from 'next';
 // import { Geist, Geist_Mono } from "next/font/google";
+import type { Metadata } from 'next';
 import './globals.css';
 import { Provider } from '@/components/ui/provider';
 import localFont from 'next/font/local';
 import ReduxProvider from '@/redux/redux-provider';
+import LoaderWrapper from './(components)/LoaderWrapper';
+import { Toaster } from 'react-hot-toast';
 
 const Gilroy = localFont({
   src: [
@@ -22,36 +24,34 @@ const Gilroy = localFont({
       weight: '600',
       style: 'normal',
     },
-    {
-      path: './(fonts)/gilroy/Gilroy-Bold.ttf',
-      weight: '800',
-      style: 'bold',
-    },
+    { path: './(fonts)/gilroy/Gilroy-Bold.ttf', weight: '800', style: 'bold' },
   ],
+  variable: '--font-gilroy',
 });
 
 export const metadata: Metadata = {
   title: 'Doexcess',
   description: 'Automate Business Processes & Streamline Workflows',
-  icons: {
-    icon: '/icon.png',
-  },
+  icons: { icon: '/icon.png' },
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <ReduxProvider>
       <html lang='en'>
         <body
           // className={`${geistSans.variable} ${geistMono.variable} antialiased`}
           className={`${Gilroy.className} antialiased`}
-          style={{ backgroundColor: '#fff' }}
+          style={{ backgroundColor: '#fff', color: '#000' }}
         >
-          <Provider>{children}</Provider>
+          <Provider>
+            <Toaster position='top-center' />
+            {children}
+          </Provider>
         </body>
       </html>
     </ReduxProvider>
