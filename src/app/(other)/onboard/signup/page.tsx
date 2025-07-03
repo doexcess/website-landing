@@ -31,18 +31,11 @@ const SignupPage = () => {
 };
 
 const SignupForm = () => {
-  const { business_info } = useBusinessInfo();
+  const { business_info, error } = useBusinessInfo();
   const dispatch = useDispatch();
   const router = useRouter();
   const searchParams = useSearchParams();
   const businessId = searchParams.get('business_id');
-  const businessName =
-    business_info?.business_name ||
-    (businessId
-      ? businessId
-          .replace(/[-_]/g, ' ')
-          .replace(/\b\w/g, (l) => l.toUpperCase())
-      : 'Your Organization');
 
   const [form, setForm] = useState({ name: '', email: '', phone: '' });
   const [touched, setTouched] = useState({
@@ -116,6 +109,51 @@ const SignupForm = () => {
           </Text>
         </Box>
       </Container>
+    );
+  }
+
+  if (error) {
+    return (
+      <Box minH='100vh' display='flex' flexDirection='column' p='3'>
+        <Box
+          flex='1'
+          display='flex'
+          alignItems='center'
+          justifyContent='center'
+          flexDir='column'
+        >
+          <Box
+            bg='#fff'
+            p={8}
+            borderRadius='16px'
+            boxShadow='0 2px 16px 0 rgba(19, 69, 98, 0.06)'
+            textAlign='center'
+            maxW='container.sm'
+            w='full'
+          >
+            <Heading as='h2' size='lg' color='red.500' mb={4}>
+              Organization Not Found
+            </Heading>
+            <Text color='gray.600' mb={6}>
+              We couldn't find the organization you're trying to join. The link
+              may be invalid or expired.
+              <br />
+              Please check with your organization or try again.
+            </Text>
+            <Button
+              colorScheme='blue'
+              bg='#4045E1'
+              color='white'
+              onClick={() => window.location.reload()}
+              borderRadius='md'
+              size='md'
+            >
+              Retry
+            </Button>
+          </Box>
+          <BasicFooter />
+        </Box>
+      </Box>
     );
   }
 

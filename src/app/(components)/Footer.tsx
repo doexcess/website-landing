@@ -168,6 +168,7 @@ export default function Footer() {
                   fontSize='14px'
                   margin='0'
                   color='#0A142F'
+                  target='_blank'
                 >
                   WhatsApp Chat
                 </Link>
@@ -209,6 +210,7 @@ export default function Footer() {
                   fontSize='14px'
                   margin='0'
                   color='#0A142F'
+                  target='_blank'
                 >
                   LinkedIn
                 </Link>
@@ -217,6 +219,7 @@ export default function Footer() {
                   fontSize='14px'
                   margin='0'
                   color='#0A142F'
+                  target='_blank'
                 >
                   Instagram
                 </Link>
@@ -225,6 +228,7 @@ export default function Footer() {
                   fontSize='14px'
                   margin='0'
                   color='#0A142F'
+                  target='_blank'
                 >
                   X
                 </Link>

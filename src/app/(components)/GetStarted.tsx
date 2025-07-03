@@ -49,7 +49,7 @@ export default function GetStarted() {
           <Heading
             as='h3'
             color='rgba(237, 238, 252, 1)'
-            fontWeight='400'
+            fontWeight='600'
             fontSize={headingSize}
             lineHeight='1.2'
           >

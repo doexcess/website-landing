@@ -11,7 +11,7 @@ const useBusinessInfo = () => {
 
   const businessId = searchParams.get('business_id');
 
-  const { business_info, loading } = useSelector(
+  const { business_info, loading, error } = useSelector(
     (state: RootState) => state.onboard
   );
 
@@ -26,6 +26,7 @@ const useBusinessInfo = () => {
   return {
     business_info,
     loading,
+    error,
   };
 };
 

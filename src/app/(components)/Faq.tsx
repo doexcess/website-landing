@@ -10,6 +10,7 @@ import {
 } from '@chakra-ui/react';
 import { Accordion } from '@chakra-ui/react';
 import { Span } from '@chakra-ui/react';
+import Link from 'next/link';
 
 interface FaqsPageProps {
   currentPage?: boolean;
@@ -45,7 +46,16 @@ export default function Faq({ currentPage = false }: FaqsPageProps) {
       {
         title: 'How secure is my data on Doexcess?',
         value: 'f',
-        text: 'We take data privacy seriously. Your information is stored securely and managed in line with global data protection standards. See our [Privacy Policy] for full details.',
+        text: (
+          <>
+            We take data privacy seriously. Your information is stored securely
+            and managed in line with global data protection standards. See our{' '}
+            <Link href='/privacy-policy'>
+              <b>Privacy Policy</b>
+            </Link>{' '}
+            for full details.
+          </>
+        ),
       },
     ],
   };
