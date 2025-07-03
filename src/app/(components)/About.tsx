@@ -140,8 +140,8 @@ export default function About() {
                 lineHeight={1.6}
                 textAlign={{ base: 'center', md: 'start' }}
               >
-                It all started early last year when I began working on a project
-                I initially called SkillUp. The idea was simple: make practical
+                It all started early 2024 when I began working on a project I
+                initially called SkillUp. The idea was simple: make practical
                 knowledge affordable and accessible to as many people as
                 possible. But when I discovered the name was already taken, I
                 rebranded it to Learnexcess and kept building—layer by layer.
