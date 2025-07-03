@@ -24,7 +24,7 @@ const FaqsPage = () => {
   };
 
   return (
-    <Box bg='#F7F8F8' minH='100vh'>
+    <Box bg='#F7F8F8'>
       {/* Hero Section */}
       <Stack
         minHeight={{ base: 'auto', md: '200px', lg: '200px' }}
@@ -70,7 +70,7 @@ const FaqsPage = () => {
       </Stack>
 
       <Container maxW='container.md'>
-        <VStack gap={6} align='start' justify='center' h='full'>
+        <VStack gap={6} align='start' justify='center'>
           <Faq currentPage={true} />
         </VStack>
       </Container>

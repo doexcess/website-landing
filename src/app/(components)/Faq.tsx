@@ -60,7 +60,11 @@ export default function Faq({ currentPage = false }: FaqsPageProps) {
 
   return (
     <VStack
-      minHeight={{ base: '500px', md: '600px', lg: '700px' }}
+      minHeight={{
+        base: '500px',
+        md: '600px',
+        lg: '100px',
+      }}
       width='full'
       align='center'
       justify='center'
@@ -133,7 +137,7 @@ export default function Faq({ currentPage = false }: FaqsPageProps) {
                   size='sm'
                   variant='subtle'
                   collapsible
-                  defaultValue={['b']}
+                  defaultValue={['a']}
                 >
                   {items.map((item, index) => (
                     <Accordion.Item

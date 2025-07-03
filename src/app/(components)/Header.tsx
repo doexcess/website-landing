@@ -90,13 +90,15 @@ export default function Header({ handleNav }: HeaderProps) {
         >
           {/* Logo and Hamburger */}
           <Flex justify='space-between' align='center'>
-            <Image
-              src='/images/header-logo.png'
-              alt='doexcess'
-              width={150}
-              height={35}
-              style={{ width: '150px', height: '35px' }}
-            />
+            <Link href={'/'}>
+              <Image
+                src='/images/header-logo.png'
+                alt='doexcess'
+                width={150}
+                height={35}
+                style={{ width: '150px', height: '35px' }}
+              />
+            </Link>
             <IconButton
               display={{ base: 'flex', md: 'none' }}
               onClick={handleToggle}
