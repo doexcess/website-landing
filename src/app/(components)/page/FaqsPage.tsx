@@ -62,7 +62,7 @@ const FaqsPage = () => {
                 textAlign='center'
                 fontWeight='bold'
               >
-                Frequent Asked Questions
+                Frequently Asked Questions
               </Heading>
             </VStack>
           </Container>
