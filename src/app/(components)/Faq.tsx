@@ -7,15 +7,28 @@ import {
   Text,
   Heading,
   Stack,
+  Accordion,
+  Span,
 } from '@chakra-ui/react';
-import { Accordion } from '@chakra-ui/react';
-import { Span } from '@chakra-ui/react';
+import { useState } from 'react';
 import Link from 'next/link';
 
 interface FaqsPageProps {
   currentPage?: boolean;
 }
 export default function Faq({ currentPage = false }: FaqsPageProps) {
+  const [openItems, setOpenItems] = useState<string[]>(['a']);
+
+  const toggleItem = (value: string) => {
+    setOpenItems((prev) =>
+      prev.includes(value)
+        ? prev.filter((item) => item !== value)
+        : [...prev, value]
+    );
+  };
+
+  const isOpen = (value: string) => openItems.includes(value);
+
   const faqs = {
     General: [
       {
@@ -36,7 +49,7 @@ export default function Faq({ currentPage = false }: FaqsPageProps) {
       {
         title: 'What kind of tasks can I manage on Doexcess?',
         value: 'd',
-        text: 'Everything from content planning, customer communication, order tracking, project timelines, document sharing, to internal workflows. It’s flexible to suit your use case.',
+        text: "Everything from content planning, customer communication, order tracking, project timelines, document sharing, to internal workflows. It's flexible to suit your use case.",
       },
       {
         title: 'Can I collaborate with others on Doexcess?',
@@ -157,18 +170,24 @@ export default function Faq({ currentPage = false }: FaqsPageProps) {
                       mb='2'
                       borderRadius='8px'
                     >
-                      <Accordion.ItemTrigger>
-                        <Span flex='1' fontSize={{ base: '15px', md: '18px' }}>
-                          {item.title}
-                        </Span>
-                        <Accordion.ItemIndicator />
-                      </Accordion.ItemTrigger>
-                      <Accordion.ItemContent
-                        fontSize={{ base: '13px', md: '16px' }}
+                      <Accordion.ItemTrigger
+                        onClick={() => toggleItem(item.value)}
                       >
-                        <Accordion.ItemBody>
+                        <Text
+                          flex='1'
+                          fontSize={{ base: '18px', md: '18px' }}
+                          fontWeight='black'
+                        >
+                          {item.title}
+                        </Text>
+                        <Text fontSize='lg' color='gray.500'>
+                          {isOpen(item.value) ? '−' : '+'}
+                        </Text>
+                      </Accordion.ItemTrigger>
+                      <Accordion.ItemContent>
+                        <Text fontSize={{ base: '13px', md: '16px' }}>
                           {item.text || 'Answer to be added...'}
-                        </Accordion.ItemBody>
+                        </Text>
                       </Accordion.ItemContent>
                     </Accordion.Item>
                   ))}

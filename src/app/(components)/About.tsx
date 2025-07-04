@@ -38,7 +38,7 @@ export default function About() {
       justify='center'
       overflow='hidden'
       px={{ base: 4, md: 6, lg: 8 }}
-      py={{ base: 8, md: 12, lg: 16 }}
+      py={{ base: 16, md: 12, lg: 16 }}
       backgroundColor='#F7F8F8'
     >
       <Container maxW='container.xl'>
@@ -152,8 +152,9 @@ export default function About() {
                 offerings effectively. There were too many moving parts—too many
                 tools that didn&apos;t quite fit together. That&apos;s when it
                 hit me: "What if we build an all that can solve this specific
-                problem?"... <ViewStoryModal />
+                problem?"...
               </Text>
+              <ViewStoryModal />
             </VStack>
           </VStack>
 
@@ -188,15 +189,26 @@ const ViewStoryModal = () => {
   return (
     <Dialog.Root>
       <Dialog.Trigger asChild>
-        <Box
+        {/* <Box
           as='span'
           color='#4045E1'
           fontWeight='bold'
           fontSize={{ base: 'md', md: 'lg' }}
           _hover={{ textDecoration: 'underline', cursor: 'pointer' }}
+          
         >
           Read more
-        </Box>
+        </Box> */}
+        <Button
+          bg='#4045E1'
+          color='white'
+          marginTop={3}
+          fontSize={{ base: 14, md: 15 }}
+          borderRadius={10}
+          padding={{ base: 4, md: 5 }}
+        >
+          Read More
+        </Button>
       </Dialog.Trigger>
       <Portal>
         <Dialog.Backdrop />
@@ -254,13 +266,7 @@ const ViewStoryModal = () => {
                   to help people focus less on the busywork and more on what
                   really matters—creating, growing, and delivering value.
                 </Text>
-                <Text
-                  mt={8}
-                  color='gray.500'
-                  fontSize='sm'
-                  fontStyle='italic'
-                  textAlign='left'
-                >
+                <Text mt={8} color='gray.500' fontSize='md' textAlign='left'>
                   Emmanuel Olaleye
                   <br />
                   Co-Founder/Software Engineer
@@ -269,7 +275,11 @@ const ViewStoryModal = () => {
             </Dialog.Body>
 
             <Dialog.CloseTrigger asChild>
-              <CloseButton size='sm' color='black' />
+              <CloseButton
+                size='sm'
+                color='black'
+                _hover={{ bg: 'transparent', color: '#4045E1' }}
+              />
             </Dialog.CloseTrigger>
           </Dialog.Content>
         </Dialog.Positioner>

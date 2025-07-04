@@ -17,7 +17,7 @@ export default function Features() {
     base: '24px',
     sm: '30px',
     md: '36px',
-    lg: '48px',
+    lg: '46px',
   };
 
   const features1 = [
@@ -92,11 +92,13 @@ export default function Features() {
             color='#080930'
             fontSize={headingSize}
             textAlign='center'
-            lineHeight='tall'
+            lineHeight='short'
+            width={{ md: 'md', lg: 'full' }}
+            marginBottom={10}
           >
             Features That Make Your Business Easier
           </Heading>
-          <Stack gap={{ base: 5, sm: 10 }}>
+          <Stack gap={{ base: 6, sm: 8 }}>
             <SimpleGrid
               templateColumns={{ base: '1fr', md: 'repeat(2,1fr)' }}
               gap={{ base: 5, sm: 10 }}

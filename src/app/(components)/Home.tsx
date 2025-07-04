@@ -103,7 +103,7 @@ export default function Home() {
             </HStack>
 
             <Heading
-              as='h1'
+              as='h2'
               color='#080930'
               fontSize={headingSize}
               lineHeight={1.2}

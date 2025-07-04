@@ -230,7 +230,7 @@ export default function Header({ handleNav }: HeaderProps) {
           >
             <Button
               variant='ghost'
-              fontWeight='medium'
+              fontWeight='bold'
               w={{ base: 'full', md: '78px' }}
               fontSize='16px'
               color='rgba(8, 9, 48, 1)'
@@ -238,7 +238,6 @@ export default function Header({ handleNav }: HeaderProps) {
                 window.location.href =
                   process.env.NEXT_PUBLIC_PLATFORM_URL + '/auth/signin';
               }}
-              // backgroundColor="#d8daf6"
               backgroundColor='#e7e9f8'
               borderRadius='12px'
             >
@@ -246,6 +245,7 @@ export default function Header({ handleNav }: HeaderProps) {
             </Button>
             <Button
               bg='rgba(64, 69, 225, 1)'
+              fontWeight='bold'
               color='white'
               borderRadius='12px'
               w={{ base: 'full', md: 'auto' }}
