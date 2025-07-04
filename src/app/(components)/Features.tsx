@@ -58,7 +58,7 @@ export default function Features() {
       align='center'
       justify='center'
       overflow='hidden'
-      spaceX={{ base: 6, md: 10 }}
+      // spaceX={{ base: 6, md: 10 }}
       py={{ base: 10, md: 20 }}
       backgroundColor='#FFFFFF'
     >

@@ -13,9 +13,11 @@ import {
   Stack,
 } from '@chakra-ui/react';
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
 import { CiMail } from 'react-icons/ci';
 
 export default function Footer() {
+  const router = useRouter();
   return (
     <Stack
       as='footer'
@@ -71,17 +73,36 @@ export default function Footer() {
                 gap={{ base: '2', md: '3' }}
               >
                 <Link
-                  href='/privacy-policy'
                   fontSize='14px'
                   margin='0'
                   color='#0A142F'
+                  onClick={(e) => {
+                    e.preventDefault();
+                    router.push('/privacy-policy');
+                  }}
                 >
                   Privacy Policy
                 </Link>
-                <Link href='/terms' fontSize='14px' margin='0' color='#0A142F'>
+                <Link
+                  fontSize='14px'
+                  margin='0'
+                  color='#0A142F'
+                  onClick={(e) => {
+                    e.preventDefault();
+                    router.push('/terms');
+                  }}
+                >
                   Terms of Service
                 </Link>
-                <Link href='/faqs' fontSize='14px' margin='0' color='#0A142F'>
+                <Link
+                  fontSize='14px'
+                  margin='0'
+                  color='#0A142F'
+                  onClick={(e) => {
+                    e.preventDefault();
+                    router.push('/faqs');
+                  }}
+                >
                   FAQs
                 </Link>
                 {/* <Link
@@ -111,10 +132,26 @@ export default function Footer() {
                 spaceX={0}
                 gap={{ base: '2', md: '3' }}
               >
-                <Link href='/' fontSize='14px' margin='0' color='#0A142F'>
+                <Link
+                  fontSize='14px'
+                  margin='0'
+                  color='#0A142F'
+                  onClick={(e) => {
+                    e.preventDefault();
+                    router.push('/');
+                  }}
+                >
                   Home
                 </Link>
-                <Link href='/about' fontSize='14px' margin='0' color='#0A142F'>
+                <Link
+                  fontSize='14px'
+                  margin='0'
+                  color='#0A142F'
+                  onClick={(e) => {
+                    e.preventDefault();
+                    router.push('/about');
+                  }}
+                >
                   About
                 </Link>
                 {/* <Link
@@ -129,10 +166,13 @@ export default function Footer() {
                   Blog
                 </Link> */}
                 <Link
-                  href='/contact'
                   fontSize='14px'
                   margin='0'
                   color='#0A142F'
+                  onClick={(e) => {
+                    e.preventDefault();
+                    router.push('/contact');
+                  }}
                 >
                   Contact
                 </Link>
@@ -156,10 +196,13 @@ export default function Footer() {
                 gap={{ base: '2', md: '3' }}
               >
                 <Link
-                  href='/contact'
                   fontSize='14px'
                   margin='0'
                   color='#0A142F'
+                  onClick={(e) => {
+                    e.preventDefault();
+                    router.push('/privacy-policy');
+                  }}
                 >
                   Contact Us
                 </Link>

@@ -21,9 +21,7 @@ export default function Faq({ currentPage = false }: FaqsPageProps) {
 
   const toggleItem = (value: string) => {
     setOpenItems((prev) =>
-      prev.includes(value)
-        ? prev.filter((item) => item !== value)
-        : [...prev, value]
+      prev.includes(value) ? prev.filter((item) => item !== value) : [value]
     );
   };
 
@@ -169,22 +167,28 @@ export default function Faq({ currentPage = false }: FaqsPageProps) {
                       backgroundColor='rgba(247, 248, 248, 1)'
                       mb='2'
                       borderRadius='8px'
+                      paddingX={{ base: 2, md: 5 }}
                     >
                       <Accordion.ItemTrigger
                         onClick={() => toggleItem(item.value)}
+                        padding={5}
                       >
                         <Text
                           flex='1'
-                          fontSize={{ base: '18px', md: '18px' }}
-                          fontWeight='black'
+                          fontSize={{ base: '18px', md: '22px' }}
+                          fontWeight='semibold'
                         >
                           {item.title}
                         </Text>
-                        <Text fontSize='lg' color='gray.500'>
+                        <Text
+                          fontSize='25px'
+                          fontWeight='semibold'
+                          color='gray.500'
+                        >
                           {isOpen(item.value) ? '−' : '+'}
                         </Text>
                       </Accordion.ItemTrigger>
-                      <Accordion.ItemContent>
+                      <Accordion.ItemContent paddingX={5} paddingBottom={5}>
                         <Text fontSize={{ base: '13px', md: '16px' }}>
                           {item.text || 'Answer to be added...'}
                         </Text>

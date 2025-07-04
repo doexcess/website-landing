@@ -37,7 +37,7 @@ export default function About() {
       align='center'
       justify='center'
       overflow='hidden'
-      px={{ base: 4, md: 6, lg: 8 }}
+      // px={{ base: 4, md: 6, lg: 8 }}
       py={{ base: 16, md: 12, lg: 16 }}
       backgroundColor='#F7F8F8'
     >
@@ -45,7 +45,7 @@ export default function About() {
         <SimpleGrid
           columns={{ base: 1, md: 1, lg: 2 }}
           alignItems='center'
-          spaceX={{ base: 8, md: 10 }}
+          // spaceX={{ base: 8, md: 10 }}
         >
           <VStack
             align={{ base: 'center', md: 'start' }}

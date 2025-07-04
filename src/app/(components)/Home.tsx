@@ -37,6 +37,7 @@ export default function Home() {
       pb={{ base: 8, md: 12, lg: 16 }}
       pt={{ base: 130, md: 100, lg: 200 }}
       position='relative'
+      data-aos='fade-up'
       _before={{
         content: '""',
         position: 'absolute',
@@ -68,6 +69,8 @@ export default function Home() {
               overflow='hidden'
               display='none'
               whiteSpace='nowrap'
+              data-aos='fade-down'
+              data-aos-delay='100'
             >
               <Box
                 backgroundColor='#4045E1'
@@ -109,6 +112,8 @@ export default function Home() {
               lineHeight={1.2}
               textAlign={{ base: 'center', md: 'left' }}
               m={0}
+              data-aos='fade-up'
+              data-aos-delay='200'
             >
               Automate Onboarding, Messaging & Events—All in One Place
             </Heading>
@@ -120,6 +125,8 @@ export default function Home() {
               fontSize={{ base: 'sm', md: 'md' }}
               textAlign={{ base: 'center', md: 'left' }}
               m={2}
+              data-aos='fade-up'
+              data-aos-delay='300'
             >
               Save hours with automated email workflows, course management, and
               ticketing—no coding needed.
@@ -134,6 +141,8 @@ export default function Home() {
               flexDirection={buttonDirection}
               alignItems={{ base: 'left', md: 'left', lg: 'center' }}
               m={0}
+              data-aos='fade-up'
+              data-aos-delay='400'
             >
               <Button
                 color='white'
@@ -166,6 +175,8 @@ export default function Home() {
             justifyContent='center'
             alignItems='center'
             order={{ base: -1, md: 1 }}
+            data-aos='fade-left'
+            data-aos-delay='500'
           >
             <Image
               src='/images/home.png'

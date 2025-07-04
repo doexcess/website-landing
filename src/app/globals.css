@@ -25,3 +25,14 @@ body {
   color: var(--foreground);
   font-family: var(--font-gilroy), Arial, Helvetica, sans-serif;
 }
+
+.link {
+  font-size: 15px;
+}
+
+/* .link:hover {
+  font-size: 15px;
+
+  text-decoration: underline;
+  line-height: 2px;
+} */

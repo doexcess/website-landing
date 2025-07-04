@@ -36,6 +36,7 @@ const FaqsPage = () => {
         pb={{ base: 8, md: 12, lg: 8 }}
         pt={{ base: 0, md: 0, lg: 0 }}
         position='relative'
+        data-aos='fade-down'
         _before={{
           content: '""',
           position: 'absolute',
@@ -61,6 +62,8 @@ const FaqsPage = () => {
                 color='#080930'
                 textAlign='center'
                 fontWeight='bold'
+                data-aos='fade-up'
+                data-aos-delay='200'
               >
                 Frequently Asked Questions
               </Heading>
@@ -69,7 +72,7 @@ const FaqsPage = () => {
         </Box>
       </Stack>
 
-      <Container maxW='container.md'>
+      <Container maxW='container.md' data-aos='fade-up' data-aos-delay='300'>
         <VStack gap={6} align='start' justify='center'>
           <Faq currentPage={true} />
         </VStack>

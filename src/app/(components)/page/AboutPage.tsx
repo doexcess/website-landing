@@ -83,6 +83,7 @@ export default function AboutPage() {
         pb={{ base: 8, md: 12, lg: 8 }}
         pt={{ base: 0, md: 0, lg: 0 }}
         position='relative'
+        data-aos='fade-down'
         _before={{
           content: '""',
           position: 'absolute',
@@ -108,10 +109,18 @@ export default function AboutPage() {
                 color='#080930'
                 textAlign='center'
                 fontWeight='bold'
+                data-aos='fade-up'
+                data-aos-delay='200'
               >
                 About Doexcess
               </Heading>
-              <Text color='#6B6B8B' fontSize='md' textAlign='center'>
+              <Text
+                color='#6B6B8B'
+                fontSize='md'
+                textAlign='center'
+                data-aos='fade-up'
+                data-aos-delay='300'
+              >
                 We're Building the Tool We Wish Existed
               </Text>
             </VStack>
@@ -124,6 +133,7 @@ export default function AboutPage() {
         marginTop={-10}
         paddingTop={20}
         boxShadow='0 4px 32px 0 rgba(19, 69, 98, 0.08)'
+        data-aos='fade-up'
       >
         <Container
           maxW='container.xl'
@@ -135,7 +145,13 @@ export default function AboutPage() {
           gap={{ base: 8, md: 20 }}
           mt={0}
         >
-          <Box flex='1' w='full' mb={{ base: 6, md: 0 }}>
+          <Box
+            flex='1'
+            w='full'
+            mb={{ base: 6, md: 0 }}
+            data-aos='fade-right'
+            data-aos-delay='100'
+          >
             <Image
               src='/images/org.png'
               alt='About Doexcess'
@@ -152,7 +168,7 @@ export default function AboutPage() {
               }}
             />
           </Box>
-          <Box flex='1' w='full'>
+          <Box flex='1' w='full' data-aos='fade-left' data-aos-delay='200'>
             <VStack align='start' gap={4} w='full'>
               <Text color='#434453' fontSize={{ base: 'sm', md: 'md' }}>
                 At Doexcess, we believe digital work shouldn't feel disorganized
@@ -184,6 +200,7 @@ export default function AboutPage() {
         pb={{ base: 8, md: 12, lg: 16 }}
         pt={{ base: 0, md: 100, lg: 100 }}
         position='relative'
+        data-aos='fade-up'
         _before={{
           content: '""',
           position: 'absolute',
@@ -208,11 +225,13 @@ export default function AboutPage() {
                 color='#080930'
                 textAlign='center'
                 fontWeight='bold'
+                data-aos='fade-up'
+                data-aos-delay='100'
               >
                 Our Why
               </Heading>
               <SimpleGrid columns={{ base: 1, md: 3 }} gap={10} w='full'>
-                {whyItems.map((item) => (
+                {whyItems.map((item, index) => (
                   <VStack
                     key={item.title}
                     bg='#fff'
@@ -222,6 +241,8 @@ export default function AboutPage() {
                     align='center'
                     gap={6}
                     boxShadow='0 2px 16px 0 rgba(19, 69, 98, 0.06)'
+                    data-aos='zoom-in'
+                    data-aos-delay={200 + index * 100}
                   >
                     <Image
                       src={item.icon}
@@ -249,7 +270,7 @@ export default function AboutPage() {
         </Box>
       </Stack>
       {/* Meet the Team Section */}
-      <Box py={{ base: 16, md: 24 }} bg='#F7F8F8'>
+      <Box py={{ base: 16, md: 24 }} bg='#F7F8F8' data-aos='fade-up'>
         <Container maxW='container.xl'>
           <VStack gap={10}>
             <Text
@@ -261,6 +282,8 @@ export default function AboutPage() {
               fontSize='xs'
               fontWeight='medium'
               alignSelf='center'
+              data-aos='fade-down'
+              data-aos-delay='100'
             >
               The Team
             </Text>
@@ -270,10 +293,19 @@ export default function AboutPage() {
               color='#080930'
               textAlign='center'
               fontWeight='bold'
+              data-aos='fade-up'
+              data-aos-delay='200'
             >
               Meet the Great Team
             </Heading>
-            <Text color='#434453' fontSize='md' textAlign='center' maxW='600px'>
+            <Text
+              color='#434453'
+              fontSize='md'
+              textAlign='center'
+              maxW='600px'
+              data-aos='fade-up'
+              data-aos-delay='300'
+            >
               Our philosophy is simple: hire great minds and give them the
               resources and support to do great works.
             </Text>
@@ -287,7 +319,7 @@ export default function AboutPage() {
                 w='full'
                 justifyItems='center'
               >
-                {team.map((member) => (
+                {team.map((member, index) => (
                   <Box
                     key={member.name}
                     bg='#fff'
@@ -304,6 +336,8 @@ export default function AboutPage() {
                     alignItems='center'
                     justifyContent='flex-end'
                     mx={{ base: 0, sm: 2 }}
+                    data-aos='fade-up'
+                    data-aos-delay={400 + index * 100}
                   >
                     <Image
                       src={member.img}

@@ -1,19 +1,7 @@
 'use client';
 
 import React from 'react';
-import {
-  Box,
-  Container,
-  Heading,
-  Text,
-  VStack,
-  Icon,
-  Stack,
-} from '@chakra-ui/react';
-import { MdHourglassEmpty } from 'react-icons/md';
-import Header from '../Header';
-import Footer from '../Footer';
-import toast from 'react-hot-toast';
+import { Box, Container, Heading, Text, VStack, Stack } from '@chakra-ui/react';
 
 const TermsPage = () => {
   const headingSize = {
@@ -36,6 +24,7 @@ const TermsPage = () => {
         pb={{ base: 8, md: 12, lg: 8 }}
         pt={{ base: 0, md: 0, lg: 0 }}
         position='relative'
+        data-aos='fade-down'
         _before={{
           content: '""',
           position: 'absolute',
@@ -61,10 +50,18 @@ const TermsPage = () => {
                 color='#080930'
                 textAlign='center'
                 fontWeight='bold'
+                data-aos='fade-up'
+                data-aos-delay='200'
               >
                 Terms of Service
               </Heading>
-              <Text color='#6B6B8B' fontSize='md' textAlign='center'>
+              <Text
+                color='#6B6B8B'
+                fontSize='md'
+                textAlign='center'
+                data-aos='fade-up'
+                data-aos-delay='300'
+              >
                 Effective Date: 02/07/2025
               </Text>
             </VStack>
@@ -72,12 +69,24 @@ const TermsPage = () => {
         </Box>
       </Stack>
 
-      <Container maxW='container.md' py={{ base: 20, md: 10 }} minH='70vh'>
+      <Container
+        maxW='container.md'
+        py={{ base: 20, md: 10 }}
+        minH='70vh'
+        data-aos='fade-up'
+        data-aos-delay='400'
+      >
         <VStack gap={6} align='start' justify='center' h='full'>
-          <Heading as='h2' size='md' color='#080930'>
+          <Heading
+            as='h2'
+            size='md'
+            color='#080930'
+            data-aos='fade-up'
+            data-aos-delay='500'
+          >
             Terms of Service
           </Heading>
-          <Text color='#434453'>
+          <Text color='#434453' data-aos='fade-up' data-aos-delay='600'>
             Welcome to Doexcess! These Terms of Service (&quot;Terms&quot;)
             govern your use of the Doexcess platform, including our website,
             app, tools, and all related services (collectively, the
@@ -85,57 +94,105 @@ const TermsPage = () => {
             Terms. If you do not agree, please do not use the platform.
           </Text>
 
-          <Heading as='h3' size='sm' color='#2326a3' mt={6}>
+          <Heading
+            as='h3'
+            size='sm'
+            color='#2326a3'
+            mt={6}
+            data-aos='fade-up'
+            data-aos-delay='700'
+          >
             1. Acceptance of Terms
           </Heading>
-          <Text color='#434453'>
+          <Text color='#434453' data-aos='fade-up' data-aos-delay='800'>
             By accessing or using Doexcess, you agree to be bound by these Terms
             and our Privacy Policy. If you are using the Services on behalf of a
             company or organization, you represent that you have the authority
             to bind them to these Terms.
           </Text>
 
-          <Heading as='h3' size='sm' color='#2326a3' mt={6}>
+          <Heading
+            as='h3'
+            size='sm'
+            color='#2326a3'
+            mt={6}
+            data-aos='fade-up'
+            data-aos-delay='900'
+          >
             2. Eligibility
           </Heading>
-          <Text color='#434453'>
+          <Text color='#434453' data-aos='fade-up' data-aos-delay='1000'>
             To use Doexcess, you must be at least 18 years old or have legal
             capacity to form a binding agreement in your jurisdiction. The
             platform is not intended for use by children.
           </Text>
 
-          <Heading as='h3' size='sm' color='#2326a3' mt={6}>
+          <Heading
+            as='h3'
+            size='sm'
+            color='#2326a3'
+            mt={6}
+            data-aos='fade-up'
+            data-aos-delay='1100'
+          >
             3. Account Registration
           </Heading>
-          <Text color='#434453'>
+          <Text color='#434453' data-aos='fade-up' data-aos-delay='1200'>
             You may be required to create an account to use certain features.
             You agree to:
           </Text>
-          <Box as='ul' pl={6} color='#434453'>
+          <Box
+            as='ul'
+            pl={6}
+            color='#434453'
+            data-aos='fade-up'
+            data-aos-delay='1300'
+          >
             <li>Provide accurate and complete information</li>
             <li>Keep your login credentials confidential</li>
             <li>Be responsible for any activity under your account</li>
           </Box>
-          <Text color='#434453'>
+          <Text color='#434453' data-aos='fade-up' data-aos-delay='1400'>
             We reserve the right to suspend or terminate accounts that violate
             these Terms.
           </Text>
 
-          <Heading as='h3' size='sm' color='#2326a3' mt={6}>
+          <Heading
+            as='h3'
+            size='sm'
+            color='#2326a3'
+            mt={6}
+            data-aos='fade-up'
+            data-aos-delay='1500'
+          >
             4. Use of the Services
           </Heading>
-          <Text color='#434453'>You agree to use Doexcess:</Text>
-          <Box as='ul' pl={6} color='#434453'>
+          <Text color='#434453' data-aos='fade-up' data-aos-delay='1600'>
+            You agree to use Doexcess:
+          </Text>
+          <Box
+            as='ul'
+            pl={6}
+            color='#434453'
+            data-aos='fade-up'
+            data-aos-delay='1700'
+          >
             <li>In compliance with all applicable laws and regulations</li>
             <li>Only for lawful and authorized purposes</li>
             <li>
               Without violating the rights of others or disrupting the platform
             </li>
           </Box>
-          <Text color='#434453'>
+          <Text color='#434453' data-aos='fade-up' data-aos-delay='1800'>
             <b>Prohibited actions include, but are not limited to:</b>
           </Text>
-          <Box as='ul' pl={6} color='#434453'>
+          <Box
+            as='ul'
+            pl={6}
+            color='#434453'
+            data-aos='fade-up'
+            data-aos-delay='1900'
+          >
             <li>
               Reverse engineering, duplicating, or exploiting the platform
             </li>
@@ -143,14 +200,27 @@ const TermsPage = () => {
             <li>Engaging in unauthorized data scraping or harvesting</li>
           </Box>
 
-          <Heading as='h3' size='sm' color='#2326a3' mt={6}>
+          <Heading
+            as='h3'
+            size='sm'
+            color='#2326a3'
+            mt={6}
+            data-aos='fade-up'
+            data-aos-delay='2000'
+          >
             5. Subscriptions &amp; Payments
           </Heading>
-          <Text color='#434453'>
+          <Text color='#434453' data-aos='fade-up' data-aos-delay='2100'>
             Some features of Doexcess may require a paid subscription. By
             subscribing:
           </Text>
-          <Box as='ul' pl={6} color='#434453'>
+          <Box
+            as='ul'
+            pl={6}
+            color='#434453'
+            data-aos='fade-up'
+            data-aos-delay='2200'
+          >
             <li>You agree to pay all fees specified during checkout</li>
             <li>
               Payments are billed in advance and are non-refundable unless
@@ -162,10 +232,17 @@ const TermsPage = () => {
             </li>
           </Box>
 
-          <Heading as='h3' size='sm' color='#2326a3' mt={6}>
+          <Heading
+            as='h3'
+            size='sm'
+            color='#2326a3'
+            mt={6}
+            data-aos='fade-up'
+            data-aos-delay='2300'
+          >
             6. Intellectual Property
           </Heading>
-          <Text color='#434453'>
+          <Text color='#434453' data-aos='fade-up' data-aos-delay='2400'>
             All content, software, design, and branding on Doexcess are the
             property of Doexcess or its licensors and are protected by
             intellectual property laws. You are granted a limited,
@@ -173,87 +250,142 @@ const TermsPage = () => {
             these Terms.
           </Text>
 
-          <Heading as='h3' size='sm' color='#2326a3' mt={6}>
+          <Heading
+            as='h3'
+            size='sm'
+            color='#2326a3'
+            mt={6}
+            data-aos='fade-up'
+            data-aos-delay='2500'
+          >
             7. Termination
           </Heading>
-          <Text color='#434453'>
+          <Text color='#434453' data-aos='fade-up' data-aos-delay='2600'>
             We reserve the right to suspend or terminate your account and access
             to the Services at our discretion, especially if:
           </Text>
-          <Box as='ul' pl={6} color='#434453'>
+          <Box
+            as='ul'
+            pl={6}
+            color='#434453'
+            data-aos='fade-up'
+            data-aos-delay='2700'
+          >
             <li>You violate these Terms</li>
             <li>You engage in misuse or abuse of the platform</li>
             <li>Required payments are not made</li>
           </Box>
-          <Text color='#434453'>
+          <Text color='#434453' data-aos='fade-up' data-aos-delay='2800'>
             You may also terminate your account at any time by contacting us.
           </Text>
 
-          <Heading as='h3' size='sm' color='#2326a3' mt={6}>
+          <Heading
+            as='h3'
+            size='sm'
+            color='#2326a3'
+            mt={6}
+            data-aos='fade-up'
+            data-aos-delay='2900'
+          >
             8. Disclaimers
           </Heading>
-          <Text color='#434453'>
+          <Text color='#434453' data-aos='fade-up' data-aos-delay='3000'>
             The Services are provided &quot;as is&quot; and &quot;as
             available.&quot; We do not guarantee that the platform will be
             uninterrupted, error-free, or fully secure. Use of Doexcess is at
             your own risk.
           </Text>
-          <Text color='#434453'>
+          <Text color='#434453' data-aos='fade-up' data-aos-delay='3100'>
             We disclaim all warranties, express or implied, including but not
             limited to merchantability, fitness for a particular purpose, and
             non-infringement.
           </Text>
 
-          <Heading as='h3' size='sm' color='#2326a3' mt={6}>
+          <Heading
+            as='h3'
+            size='sm'
+            color='#2326a3'
+            mt={6}
+            data-aos='fade-up'
+            data-aos-delay='3200'
+          >
             9. Limitation of Liability
           </Heading>
-          <Text color='#434453'>
+          <Text color='#434453' data-aos='fade-up' data-aos-delay='3300'>
             To the fullest extent permitted by law, Doexcess and its affiliates
             shall not be liable for any indirect, incidental, special, or
             consequential damages arising out of your use of the Services,
             including but not limited to data loss, business interruption, or
             service delays.
           </Text>
-          <Text color='#434453'>
+          <Text color='#434453' data-aos='fade-up' data-aos-delay='3400'>
             Our total liability to you for any claim shall not exceed the amount
             you paid to use the Services in the 6 months prior to the incident.
           </Text>
 
-          <Heading as='h3' size='sm' color='#2326a3' mt={6}>
+          <Heading
+            as='h3'
+            size='sm'
+            color='#2326a3'
+            mt={6}
+            data-aos='fade-up'
+            data-aos-delay='3500'
+          >
             10. Modifications
           </Heading>
-          <Text color='#434453'>
+          <Text color='#434453' data-aos='fade-up' data-aos-delay='3600'>
             We may modify these Terms from time to time. When we do, we will
             update the &quot;Effective Date&quot; at the top and notify you of
             material changes. Continued use of the Services after such updates
             constitutes acceptance of the new terms.
           </Text>
 
-          <Heading as='h3' size='sm' color='#2326a3' mt={6}>
+          <Heading
+            as='h3'
+            size='sm'
+            color='#2326a3'
+            mt={6}
+            data-aos='fade-up'
+            data-aos-delay='3700'
+          >
             11. Third-Party Services
           </Heading>
-          <Text color='#434453'>
+          <Text color='#434453' data-aos='fade-up' data-aos-delay='3800'>
             Doexcess may integrate with or link to third-party services. We are
             not responsible for the content, policies, or functionality of those
             third-party platforms. Use of such services is at your own risk.
           </Text>
 
-          <Heading as='h3' size='sm' color='#2326a3' mt={6}>
+          <Heading
+            as='h3'
+            size='sm'
+            color='#2326a3'
+            mt={6}
+            data-aos='fade-up'
+            data-aos-delay='3900'
+          >
             12. Governing Law
           </Heading>
-          <Text color='#434453'>
+          <Text color='#434453' data-aos='fade-up' data-aos-delay='4000'>
             These Terms shall be governed by and interpreted in accordance with
-            the laws of [Insert Country/State], without regard to its conflict
-            of law principles.
+            the laws of Lagos/Nigeria without regard to its conflict of law
+            principles.
           </Text>
 
-          <Heading as='h3' size='sm' color='#2326a3' mt={6}>
+          <Heading
+            as='h3'
+            size='sm'
+            color='#2326a3'
+            mt={6}
+            data-aos='fade-up'
+            data-aos-delay='4100'
+          >
             13. Contact Us
           </Heading>
-          <Text color='#434453'>
+          <Text color='#434453' data-aos='fade-up' data-aos-delay='4200'>
             If you have any questions about these Terms, please contact us:
           </Text>
-          <Box pl={4} color='#434453'>
+          <Box pl={4} color='#434453' data-aos='fade-up' data-aos-delay='4300'>
             <Text>
               Email: <b>hello@doexcess.com</b>{' '}
             </Text>

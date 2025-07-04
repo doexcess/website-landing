@@ -1,6 +1,8 @@
 'use client';
 
-import { useRef } from 'react';
+import { useRef, useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import About from './About';
 import BlogPost from './BlogPost';
 import Features from './Features';
@@ -18,24 +20,32 @@ export default function Client() {
   const blogsRef = useRef<HTMLDivElement>(null);
   const faqRef = useRef<HTMLDivElement>(null);
 
+  useEffect(() => {
+    AOS.init({
+      duration: 800,
+      once: true,
+      offset: 80,
+    });
+  }, []);
+
   return (
     <>
-      <div ref={homeRef}>
+      <div ref={homeRef} data-aos='fade-up'>
         <Home />
       </div>
-      <div ref={aboutRef}>
+      <div ref={aboutRef} data-aos='fade-up' data-aos-delay='100'>
         <About />
       </div>
-      <div ref={featuresRef}>
+      <div ref={featuresRef} data-aos='fade-up' data-aos-delay='200'>
         <Features />
       </div>
-      {/* <div ref={blogsRef}>
+      {/* <div ref={blogsRef} data-aos="fade-up" data-aos-delay="300">
         <BlogPost />
       </div> */}
-      <div ref={faqRef}>
+      <div ref={faqRef} data-aos='fade-up' data-aos-delay='300'>
         <Faq />
       </div>
-      <div ref={pricingRef}>
+      <div ref={pricingRef} data-aos='fade-up' data-aos-delay='400'>
         <GetStarted />
       </div>
     </>

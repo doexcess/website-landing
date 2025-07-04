@@ -230,7 +230,7 @@ export default function Header({ handleNav }: HeaderProps) {
           >
             <Button
               variant='ghost'
-              fontWeight='bold'
+              fontWeight='semibold'
               w={{ base: 'full', md: '78px' }}
               fontSize='16px'
               color='rgba(8, 9, 48, 1)'
@@ -245,7 +245,7 @@ export default function Header({ handleNav }: HeaderProps) {
             </Button>
             <Button
               bg='rgba(64, 69, 225, 1)'
-              fontWeight='bold'
+              fontWeight='semibold'
               color='white'
               borderRadius='12px'
               w={{ base: 'full', md: 'auto' }}
