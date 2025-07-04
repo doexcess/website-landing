@@ -368,7 +368,7 @@ const TermsPage = () => {
           </Heading>
           <Text color='#434453' data-aos='fade-up' data-aos-delay='4000'>
             These Terms shall be governed by and interpreted in accordance with
-            the laws of Lagos/Nigeria without regard to its conflict of law
+            the laws of Lagos, Nigeria without regard to its conflict of law
             principles.
           </Text>
 
