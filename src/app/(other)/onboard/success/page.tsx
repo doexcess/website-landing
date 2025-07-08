@@ -38,7 +38,7 @@ export default function OnboardSuccessPage() {
           <Text color='#434453' fontSize='lg'>
             Welcome to the organization. Your registration is complete and you
             now have access to all member features. We&apos;re excited to have
-            you onboard!
+            you onboard! Please check your mailbox for further instructions.
           </Text>
           <Button
             colorScheme='blue'
